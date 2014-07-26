@@ -1,0 +1,124 @@
+\section{Decisions}
+
+\subsection{Written Exercises}
+
+\setcounter{counter}{1}
+\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+
+\item What is the output of the following code?
+\begin{lstlisting}
+int depth = 8;
+if (depth >= 8) {
+     System.out.print("Danger: ");
+     System.out.print("deep water. ");
+}
+System.out.println("No swimming allowed.");
+\end{lstlisting}
+
+\item What is the output of the following code?
+\begin{lstlisting}
+int depth = 12;
+int temp = 42;
+System.out.print("The water is: ");
+if (depth >= 8)
+     System.out.print("deep ");
+if (temp <= 50 && depth <= 12)
+     System.out.print("cold ");
+System.out.println(" wet.");
+\end{lstlisting}
+
+\item If k holds a value of the type int, then the value of the expression:
+\begin{lstlisting}
+k <= 10 || k > 10
+\end{lstlisting}
+\begin{enumerate}
+\item[a)] must be true
+\item[b)] must be false
+\item[c)] could be either true or false
+\item[d)] is a value of type int
+\end{enumerate}
+
+\item Consider the following code:
+\begin{lstlisting}
+String str1 = "Java is fun";
+String str2 = "Java is fun";
+if ( /* */ )
+     System.out.println("String1 and String2 are the same");
+else
+     System.out.println("String1 and String2 are different");
+\end{lstlisting}
+Fill in the missing condition to check if str1 and str2 are the same.
+
+\item Evaluate the following expressions, assuming that x = -2 and y = 3.
+\begin{lstlisting} 
+a) x <= y 
+b) (x < 0) || (y < 0)
+c) (x <= y) && (x < 0)
+d) ((x + y) > 0) && !(y > 0)
+\end{lstlisting}
+
+\item Write the output of the following code:
+\begin{lstlisting}
+int grade = 45;
+if (grade >= 70)
+     System.out.println("passing");
+if (grade < 70)
+     System.out.println("dubious");
+if (grade < 60)
+     System.out.println("failing");
+\end{lstlisting}
+
+\item Write the output of the following code:
+\begin{lstlisting}
+String option = "A";
+if (option.equals("A"))
+     System.out.println("addRecord");
+if (option.compareTo("A") == 0)
+     System.out.println("deleteRecord");
+\end{lstlisting}
+
+\item Write the output of the following code:
+\begin{lstlisting}
+double x = -1.5;
+if (x < -1.0)
+     System.out.println("true");
+else
+     System.out.println("false");
+     System.out.println("after if...else");
+\end{lstlisting}
+
+\item Write the output of the following code:
+\begin{lstlisting}
+int j = 8;
+double x = -1.5;
+if (x >= j)
+     System.out.println("x is high");
+else
+     System.out.println("x is low");
+\end{lstlisting}
+
+\item Write the output of the following code:
+\begin{lstlisting}
+double x = -1.5;
+if (x <= 0.0) {
+     if (x < 0.0)
+          System.out.println("neg");
+     else
+          System.out.println("zero");
+}
+else
+     System.out.println("pos");
+\end{lstlisting}
+
+\end{enumerate}
+
+\subsection{Programming Exercises}
+
+\setcounter{counter}{1}
+\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+
+\item Write a program that asks for 3 integers and prints the median value of the three integers.
+
+\item Write code that ensures that an int variable called number is an odd integer.
+
+\end{enumerate}

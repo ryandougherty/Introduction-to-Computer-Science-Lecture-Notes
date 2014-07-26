@@ -1,0 +1,102 @@
+\section{Computers}
+%
+The package consists of the following files:
+\begin{flushleft}
+\begin{tabular}{@{}p{2.5cm}l}
+{\tt history.txt}& the version history of the package\\[2pt]
+{\tt llncs.cls}  & class file for \LaTeX{}\\[2pt]
+{\tt llncs.dem}  & an example showing how to code the text\\[2pt]
+{\tt llncs.doc}  & general instructions (source of this document),\\
+        & {\tt llncs.doc} means {\itshape l\/}atex {\itshape doc\/}umentation for\\
+        & {\itshape L\/}ecture {\itshape N}otes in {\itshape C\/}omputer {\itshape S\/}cience\\
+{\tt llncsdoc.pdf}& the documentation of the class (PDF version),\\
+{\tt llncs.doc}  & general instructions (source of this document),\\
+{\tt llncsdoc.sty}  & class modifications to help for the instructions\\
+{\tt llncs.ind} & an external (faked) author index file\\
+{\tt subjidx.ind} & subject index demo from the Springer book package\\
+{\tt llncs.dvi}    & the resultig DVI file (remember to use binary transfer!)\\[2pt]
+{\tt sprmindx.sty} & supplementary style file for MakeIndex\\
+                   & (usage: {\tt makeindex -s sprmindx.sty <yourfile.idx>})
+\end{tabular}
+\end{flushleft}
+
+
+\subsection{Written Exercises}
+
+\newcounter{counter}
+\setcounter{counter}{1}
+\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+
+\item What does a compiler do?
+
+\item Consider the following Java Program:
+\begin{lstlisting}
+public class VendingMachine {
+     public static void main(String[] args) {
+          System.out.println("Please insert 25c");
+     }
+}
+\end{lstlisting}
+By what name would you save this program on your hard disk?
+
+\item Is Java a functional language, procedural language, object-oriented language, or logic language?
+
+\item What is a plain text file?
+
+\item How is a text file different than a .doc file?
+
+\item What is a source program?
+
+\item What is Java bytecode?
+
+\item What is the program that translates Java bytecode instructions into machine-language instructions?
+
+\item Is Java case-sensitive?
+
+\end{enumerate}
+
+%\addtocounter{question_num}{1}
+%\paragraph{Question \arabic{question_num}}
+%Consider the following Java Program:
+%\begin{lstlisting}
+%public class VendingMachine {
+%	public static void main(String[] args) {
+%		System.out.println("Please insert 25c");
+%	}
+%}
+%\end{lstlisting}
+%By what name would you save this program on your hard disk?
+%
+%\addtocounter{question_num}{1}
+%\paragraph{Question \arabic{question_num}}
+%Is Java a functional language, procedural language, object-oriented language, or logic language?
+%
+%\addtocounter{question_num}{1}
+%\paragraph{Question \arabic{question_num}}
+%What is a plain text file?
+%
+%\addtocounter{question_num}{1}
+%\paragraph{Question \arabic{question_num}}
+%How is a text file different than a .doc file?
+%
+%\addtocounter{question_num}{1}
+%\paragraph{Question \arabic{question_num}}
+%What is a compiler?
+%
+%\addtocounter{question_num}{1}
+%\paragraph{Question \arabic{question_num}}
+%What is a source program?
+%
+%\addtocounter{question_num}{1}
+%\paragraph{Question \arabic{question_num}}
+%What is the program that translates Java bytecode instructions into machine-language instructions?
+%
+%\addtocounter{question_num}{1}
+%\paragraph{Question \arabic{question_num}}
+%What is Java bytecode?
+%
+%\addtocounter{question_num}{1}
+%\paragraph{Question \arabic{question_num}}
+%Is Java case-sensitive?
+
+\subsection{Programming Exercises}

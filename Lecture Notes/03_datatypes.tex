@@ -1,0 +1,135 @@
+\section{Data Types}
+
+\subsection{Written Exercises}
+
+\setcounter{counter}{1}
+\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+
+\item Give the output of the following program:
+\begin{lstlisting}
+public class Example {
+     public static void main(String[] args) {
+          int y = 2, z = 1;
+          z = y * 2;
+          System.out.print(y + z);
+     }
+}
+\end{lstlisting}
+
+\item Consider the following program:
+\begin{lstlisting}
+public class Example {
+     public static void main(String[] args) {
+          String str = new String("Arizona state university");
+          char ch1 = str.toLowerCase().toUpperCase().charAt(0);
+          char ch2 = str.toUpperCase().charAt(8);
+          char ch3 = str.toUpperCase().charAt(str.length() - 1);
+          System.out.println("character 1 is: " + ch1);
+          System.out.println("character 2 is: " + ch2);
+          System.out.println("character 3 is: " + ch3);
+     }
+}
+\end{lstlisting}
+What will be the output?
+
+\item Consider the following program:
+\begin{lstlisting}
+public class Example {
+     public static void main(String[] args) {
+          int num1 = 4, num2 = 5;
+          System.out.println("4" + "5");
+          System.out.println(num1 + num2);
+          System.out.println("num1" + "num2");
+          System.out.println(4+5);
+     }
+}
+\end{lstlisting}
+What will be the output?
+
+\item Which of the following invokes the method length() of the object str and stores the result in val of type int?
+\begin{lstlisting}
+a) int val = str.length();
+b) int val = length.str();
+c) int val = length().str;
+d) int val = length(str);
+\end{lstlisting}
+
+\item Evaluate each of the following expressions.
+\begin{lstlisting}
+String s = "Programming is Fun";
+String t = "Workshop is cool";
+a) System.out.println(s.charAt(0) + t.substring(3, 4));
+b) System.out.println(t.substring(7));
+\end{lstlisting}
+
+\item Evaluate each of the following expressions.
+\begin{lstlisting}
+int j = 11;
+int k = 3;
+String s = "Ford Rivers";
+a) j / k
+b) j % k
+c) s.substring(1, 5)
+d) s.length()
+e) s.charAt(3)
+\end{lstlisting}
+
+\item True or False? The type String is a primitive data type.
+
+\item True or False? The type String is a primitive data type.
+
+\item Write the output of the following program:
+\begin{lstlisting}
+public class Question {
+     public static void main(String[] args) {
+          String str = "hello";
+          System.out.println("abcdef".substring(1, 3));
+          System.out.println("pizza".length());
+          System.out.println(str.replace('h', 'm'));
+          System.out.println("hamburger".substring(0, 3));
+          System.out.println(str.charAt(1));
+          System.out.println(str.equals("hello"));
+          System.out.println("pizza".toUpperCase());
+          System.out.println(Math.pow(2, 4));
+          double num4 = Math.sqrt(16);
+          System.out.println(num4);
+     }
+}
+\end{lstlisting}
+
+\item Write the output of the following program:
+\begin{lstlisting}
+public class Question {
+     public static void main(String[] args) {
+          String s1 = new String("Clinton, Hillary");
+          String s2 = new String("Obama, Barack");
+          System.out.println(s1.charAt(2));
+          System.out.println(s1.charAt(s1.length() - 1));
+          System.out.println(s2.toUpperCase());
+          System.out.println(s2.substring(
+               s2.indexOf(",") + 2, s2.length());
+     }
+}
+\end{lstlisting}
+
+\item What value is contained in the integer variable length after the following statements are executed?
+\begin{lstlisting}
+length = 5;
+length += 3;
+length = length * 2;
+\end{lstlisting}
+
+\item What is the result of 2/4 when evaluated in Java? Why?
+
+\end{enumerate}
+
+\subsection{Programming Exercises}
+
+\setcounter{counter}{1}
+\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+
+\item Write a Java program that asks the user for the radius of a circle and finds the area of the circle.
+
+\item Write a Java program that prompts the user to enter 2 integers. Print the smaller of the 2 integers.
+
+\end{enumerate}

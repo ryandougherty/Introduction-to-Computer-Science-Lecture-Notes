@@ -2,4 +2,92 @@
 
 \subsection{Written Exercises}
 
+\setcounter{counter}{1}
+\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+
+\item Which of the following enforces Encapsulation?
+\begin{enumerate}
+\item[a)]Make instance variables private
+\item[b)]Make methods public
+\item[c)]Make the class final
+\item[d)]Both a and b
+\item[e)]All of the above
+\end{enumerate}
+
+\item Use the following class to answer the questions below:
+\label{question:store}
+\begin{lstlisting}
+public class Store {
+	private int quantity;
+	private double price;
+
+	public Store(int q, double p) {
+		quantity = q;
+		price = p;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setPrice(double p) {
+		price = p;
+	}
+
+	public double calcTotal() {
+		return price * quantity;
+	}
+}
+\end{lstlisting}
+\begin{enumerate}
+\item[a)]What is the name of the class?
+\item[b)]List all instance variables of the class.
+\item[c)]List all methods of the class.
+\item[d)]List all mutators in the class.
+\item[e)]List all accessors in the class.
+\item[f)]List which method is the constructor.
+\end{enumerate}
+
+\item True or False? If no constructor is provided, then Java automatically provides a default constructor.
+
+\item True or False? A method must have at least 1 return statement.
+
+\end{enumerate}
+
 \subsection{Programming Exercises}
+
+\setcounter{counter}{1}
+\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+
+\item For the Store class in the Written Exercises above, do the following:
+\begin{enumerate}
+\item[a)]Write a mutator for the quantity.
+\item[b)]Write an accessor for the price.
+\item[c)]Write a line of code that will create an instance called videoStore that has quantity 100 and a price of 5.99.
+\item[d)]Call the calcTotal method with the videoStore object (from part c) to print out the total.
+\end{enumerate}
+
+\item Correct the following class definition if you think it will not work:
+\begin{lstlisting}
+public class Student {
+     private String name, major;
+     public Student() {
+          name = "???";
+          major = "xxx";
+     }
+     public Student(String n, String m) {
+          n = name;
+          m = major;
+     }
+     public String getMajor() {
+          return m;
+     }
+     public String getName() {
+          return n;
+     }
+}
+\end{lstlisting}
+
+\item Implement a class called AsuStudent. The class should keep track of the student's name, number of classes registered, hours spent per week for a class (consider a student devotes the same amount of time for each of his/her classes per week). Implement a toString method to show the name and number of classes registered by a student, a getName method to return the name of the student, a getTotalHours method to return the total number of hours per week, and a setHours method to set the number of hours the student devotes for each class.
+
+\end{enumerate}

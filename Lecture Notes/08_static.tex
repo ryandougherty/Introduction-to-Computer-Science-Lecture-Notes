@@ -2,4 +2,33 @@
 
 \subsection{Written Exercises}
 
+\setcounter{counter}{1}
+\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+
+\item What is a static variable? What is a static method?
+
+\item Using the code below, how many copies of the variable number exist after instantiating 374 different AmazingClass objects?
+\begin{lstlisting}
+public class AmazingClass {
+     private static int number;
+     public AmazingClass(int a) {
+          number = a;
+     }
+     public int twice() {
+          number *= 2;
+          return number;
+     }
+}
+\end{lstlisting}
+
+\item Using the code from above, what is the value of number after each of the following statements? (For each part, assume the preceding parts have already been executed).
+\begin{lstlisting}
+AmazingClass ac1 = new AmazingClass(3);
+AmazingClass ac2 = new AmazingClass(7);
+ac1.twice();
+ac2.twice();
+\end{lstlisting}
+
+\end{enumerate}
+
 \subsection{Programming Exercises}

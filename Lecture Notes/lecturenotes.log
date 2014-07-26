@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  26 JUL 2014 08:37
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  26 JUL 2014 11:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -345,21 +345,74 @@ Overfull \hbox (54.17572pt too wide) in paragraph at lines 48--49
 ][][][] 
  []
 
-[9]) [10] (./05_loops.tex) [11] (./06_introclasses.tex) [12] (./07_methods.tex)
-[13] (./08_static.tex) [14] (./09_overloading.tex) [15] (./10_arrays.tex)
-[16] (./11_searching.tex) [17] (./12_sorting.tex) [18] (./lecturenotes.aux)
+[9]) [10] (./05_loops.tex [11]) [12] (./06_introclasses.tex [13]) [14]
+(./07_methods.tex
+Overfull \hbox (3.77582pt too wide) in paragraph at lines 23--24
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[15]
+Overfull \hbox (10.0758pt too wide) in paragraph at lines 59--60
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (47.87573pt too wide) in paragraph at lines 74--75
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+
+Overfull \hbox (16.3758pt too wide) in paragraph at lines 81--82
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (60.47571pt too wide) in paragraph at lines 82--83
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (47.87573pt too wide) in paragraph at lines 83--84
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (22.67578pt too wide) in paragraph at lines 95--96
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16])
+[17] (./08_static.tex) [18] (./09_overloading.tex) [19] (./10_arrays.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 16.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 16.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 50.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
+) [20]
+(./11_searching.tex) [21] (./12_sorting.tex) [22] (./lecturenotes.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3299 strings out of 493488
- 46458 string characters out of 3141326
+ 3392 strings out of 493488
+ 47619 string characters out of 3141326
  160434 words of memory out of 3000000
- 6578 multiletter control sequences out of 15000+200000
- 9020 words of font info for 32 fonts, out of 3000000 for 9000
+ 6663 multiletter control sequences out of 15000+200000
+ 10544 words of font info for 37 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,9n,40p,224b,1592s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,9n,40p,606b,1592s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
@@ -367,12 +420,13 @@ usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
 r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
 local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
 al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/
-texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/t
-exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on lecturenotes.pdf (18 pages, 139205 bytes).
+texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/te
+xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on lecturenotes.pdf (22 pages, 162467 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 115 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

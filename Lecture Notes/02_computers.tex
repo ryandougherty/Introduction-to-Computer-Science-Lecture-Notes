@@ -1,25 +1,99 @@
 \section{Computers}
 %
-The package consists of the following files:
-\begin{flushleft}
-\begin{tabular}{@{}p{2.5cm}l}
-{\tt history.txt}& the version history of the package\\[2pt]
-{\tt llncs.cls}  & class file for \LaTeX{}\\[2pt]
-{\tt llncs.dem}  & an example showing how to code the text\\[2pt]
-{\tt llncs.doc}  & general instructions (source of this document),\\
-        & {\tt llncs.doc} means {\itshape l\/}atex {\itshape doc\/}umentation for\\
-        & {\itshape L\/}ecture {\itshape N}otes in {\itshape C\/}omputer {\itshape S\/}cience\\
-{\tt llncsdoc.pdf}& the documentation of the class (PDF version),\\
-{\tt llncs.doc}  & general instructions (source of this document),\\
-{\tt llncsdoc.sty}  & class modifications to help for the instructions\\
-{\tt llncs.ind} & an external (faked) author index file\\
-{\tt subjidx.ind} & subject index demo from the Springer book package\\
-{\tt llncs.dvi}    & the resultig DVI file (remember to use binary transfer!)\\[2pt]
-{\tt sprmindx.sty} & supplementary style file for MakeIndex\\
-                   & (usage: {\tt makeindex -s sprmindx.sty <yourfile.idx>})
-\end{tabular}
-\end{flushleft}
+\subsection{Motivation}
+This chapter concerns basic knowledge of computers. In order to write programs for computers, we need to have a basic understanding of how computers work. Once we have this understanding, we can write programs that make use of the computer's hardware and software. In recent years, computers have become much faster due to advancements in hardware speed and software breakthroughs. However, there is only a limit to how fast these advancements can take us. Therefore, we need to write programs that use the hardware efficiently.
 
+\subsection{Introduction to Java}
+Java is an object-oriented programming language invented by Sun Microsystems in 1995, and Sun was acquired by Oracle in 2009. One large benefit of Java is that it is run in a $virtual machine$, which means that it can be run on almost all major platforms: Windows, Mac OS X, Linux, Solaris, etc. 
+
+\subsection{Java Program Structures}
+All Java programs follow the same basic structure. A typical Java file (with a ``.java" extension) is composed of 1 or more $classes$, which have 1 or more $methods$, which have 1 or more $statements$. We will give more rigor to what these terms mean later.
+
+\subsection{First Java Program}
+A typical first program is called a ``Hello, World" program to the screen. The reason that this is the first program for many programmers is that they can demonstrate that they know the basic structure of a Java program. 
+\\ \\
+To print to the screen, a program (that must be saved in a text file that is called ``HelloWorld.java") to do this is:
+\begin{lstlisting}
+public class HelloWorld {
+	public static void main(String[] args) {
+		System.out.println("Hello, World");
+	}
+}
+\end{lstlisting}
+You must type this program in a raw text editor, not in a rich text editor such as Microsoft Word. The reason for this is that Microsoft Word adds special characters, which are not recognized when you compile and run your program (see below).
+\\ \\
+For many beginners, this program may be a little daunting and confusing. But as we can see, this program follows the basic structure of a Java program: it has 1 class, named ``HelloWorld"; it has one method, named ``main", and it has one statement, which prints to the screen. 
+\\ \\
+For each of the terms, the precise meaning of them will be covered in later chapters. However, the basic structure of:
+\begin{lstlisting}
+public class YourProgram {
+	public static void main(String[] args) {
+		// Insert statements here
+	}
+}
+\end{lstlisting}
+will be enough for most beginning Java programs. As a programmer, you will put the statements between the opening and closing brace of the main method.
+\\ \\
+Note: the text ``Insert statements here" is in green. This is a ``comment", in which you can add any text. There are 3 types of Java comments:
+
+\begin{itemize}
+\item Line comments - start with \verb|//|, and last for the rest of the line.
+\item Multiline comments - start with \verb|/*| and end with \verb|*/|, and last until the \verb|*/| is reached.
+\item JavaDoc comments - these have the same form as multiline comments, but have a purpose in providing documentation for Java code. They are typically put right before a method declaration.
+\end{itemize}
+
+\subsection{Running Java Programs}
+Now that we understand how to create Java programs, we want to run them on our computers. In order to run a Java file, we need to do 2 steps: compile it, and then run it.
+
+\subsubsection{Compiling Java Programs}
+A compiler (for most programming languages) is software that translates the user-created code into object (or ``machine") code. Obviously, user-created code is readable by the user, since the user created it. However, object code is not readable, since it is code that the computer can read, and then execute.
+\\ \\
+There are a few ways of compiling a Java file:
+\begin{itemize}
+\item If you have an Integrated Development Environment (IDE), such as Eclipse, Netbeans, etc. on your machine (they are available on the web for free), running your program is done by clicking the green arrow (``Run") button in the toolbar. This operation will compile and run the program.
+
+\item If you are not using an IDE, and have a Terminal/Command Prompt, etc. application in which you supply commands, you enter these commands to compile and then run a Java program:
+\\
+\verb|javac YourProgramName.java| \\
+\verb|java YourProgramName| (Note: no ``.java" extension on this command)
+
+\end{itemize}
+However, if you mistyped during creating your program, you encounter what is called a ``compilation error", which shows an appropriate error message. Common errors include:
+
+\begin{itemize}
+\item Incorrect class name - the name of the class must exactly match the name of the file that it is saved in. 
+\item Invalid class name - there are rules for what a class name can be. For example, it cannot be a Java keyword (i.e. public, class; all of the words that highlight in blue).
+\item No semicolon after statements - all statements must end in a semicolon.
+\item Not putting quote marks around what is put inside the ``System.out.println" statement. This is called a ``string" of characters. If no quote marks are put, then the Java compiler cannot recognize what Hello, World means. However, it does know what ``Hello, World" means.  
+\end{itemize}
+
+\subsection{Notes}
+\begin{itemize}
+\item There are 2 kinds of print statements in Java:
+\begin{itemize}
+\item \verb|System.out.print| - prints out exactly what is given in the parentheses.
+\item \verb|System.out.println| - same as \verb|print| but adds a newline after the text given in the parentheses. The next time something is printed, it will start on the next line.
+\end{itemize}
+
+\item There are numerous special characters that appear in between quote marks:
+\begin{itemize}
+\item \verb|\n| - a newline character. Suppose we have this line of code:
+\begin{lstlisting}
+System.out.print("Testing newline\nTest2");
+\end{lstlisting}
+The output for this code would be:
+\begin{verbatim}
+Testing newline
+Test2
+\end{verbatim}
+Notice that the character \verb|\n| was not printed because it has a special purpose: providing a new line. Therefore, one can see that the following lines of code do the same thing:
+\begin{verbatim}
+System.out.println("Text");
+System.out.print("Text\n");
+\end{verbatim}
+\item \verb|\t| - a tab character. The text that follows \verb|\t| will appear in the same manner as a tab key is used in any other text document.
+\end{itemize}
+\end{itemize}
 
 \subsection{Written Exercises}
 
@@ -55,48 +129,13 @@ By what name would you save this program on your hard disk?
 
 \end{enumerate}
 
-%\addtocounter{question_num}{1}
-%\paragraph{Question \arabic{question_num}}
-%Consider the following Java Program:
-%\begin{lstlisting}
-%public class VendingMachine {
-%	public static void main(String[] args) {
-%		System.out.println("Please insert 25c");
-%	}
-%}
-%\end{lstlisting}
-%By what name would you save this program on your hard disk?
-%
-%\addtocounter{question_num}{1}
-%\paragraph{Question \arabic{question_num}}
-%Is Java a functional language, procedural language, object-oriented language, or logic language?
-%
-%\addtocounter{question_num}{1}
-%\paragraph{Question \arabic{question_num}}
-%What is a plain text file?
-%
-%\addtocounter{question_num}{1}
-%\paragraph{Question \arabic{question_num}}
-%How is a text file different than a .doc file?
-%
-%\addtocounter{question_num}{1}
-%\paragraph{Question \arabic{question_num}}
-%What is a compiler?
-%
-%\addtocounter{question_num}{1}
-%\paragraph{Question \arabic{question_num}}
-%What is a source program?
-%
-%\addtocounter{question_num}{1}
-%\paragraph{Question \arabic{question_num}}
-%What is the program that translates Java bytecode instructions into machine-language instructions?
-%
-%\addtocounter{question_num}{1}
-%\paragraph{Question \arabic{question_num}}
-%What is Java bytecode?
-%
-%\addtocounter{question_num}{1}
-%\paragraph{Question \arabic{question_num}}
-%Is Java case-sensitive?
-
 \subsection{Programming Exercises}
+
+\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+\item Write a program to print the following to the screen using a number of print statements:
+\begin{verbatim}
+  *
+ * *
+* * *
+\end{verbatim}
+\end{enumerate}

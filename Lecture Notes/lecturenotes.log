@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  26 JUL 2014 11:39
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  27 JUL 2014 19:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -206,18 +206,18 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 (./llncsdoc.sty) (./lecturenotes.aux)
 \openout1 = `lecturenotes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 (/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -235,11 +235,11 @@ LaTeX Font Info:    ... okay on input line 31.
 )
 \c@lstlisting=\count132
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <24.88> on input line 41.
+(Font)              <24.88> on input line 42.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 41.
+(Font)              <20.74> on input line 42.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 41.
+(Font)              <17.28> on input line 42.
  [1
 
 {/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
@@ -257,137 +257,56 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [3
 
 
-]
+])
+Underfull \hbox (badness 10000) in paragraph at lines 8--56
 
-LaTeX Warning: Reference `contbegin' on page 4 undefined on input line 24.
-
-
-LaTeX Warning: Reference `refer' on page 4 undefined on input line 33.
+ []
 
 
-LaTeX Warning: Reference `refedit' on page 4 undefined on input line 40.
+Underfull \hbox (badness 10000) in paragraph at lines 8--56
 
-) [4] (./02_computers.tex
+ []
+
+[4] (./02_computers.tex
+Underfull \hbox (badness 10000) in paragraph at lines 13--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--28
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 35--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
+
+ []
+
+[6]
 \c@counter=\count133
-
-Overfull \hbox (0.40485pt too wide) in paragraph at lines 52--53
+ [7]
+Overfull \hbox (0.40485pt too wide) in paragraph at lines 126--127
 []\OT1/cmr/m/n/10 What is the pro-gram that trans-lates Java byte-code in-struc
 -tions into machine-
  []
 
-) [5] (./03_datatypes.tex
-Overfull \hbox (60.47571pt too wide) in paragraph at lines 23--24
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (66.7757pt too wide) in paragraph at lines 24--25
-[][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (73.07568pt too wide) in paragraph at lines 26--27
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (16.3758pt too wide) in paragraph at lines 27--28
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][] 
- []
-
-
-Overfull \hbox (16.3758pt too wide) in paragraph at lines 28--29
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][] 
- []
-
-
-Overfull \hbox (16.3758pt too wide) in paragraph at lines 29--30
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][] 
- []
-
-[6]
-Overfull \hbox (16.3758pt too wide) in paragraph at lines 61--62
-[][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (16.3758pt too wide) in paragraph at lines 86--87
-[][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (35.27576pt too wide) in paragraph at lines 89--90
-[][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (3.77582pt too wide) in paragraph at lines 104--105
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (28.97577pt too wide) in paragraph at lines 107--108
-[][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[7]) [8] (./04_decisions.tex
-Overfull \hbox (47.87573pt too wide) in paragraph at lines 46--47
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][] 
- []
-
-
-Overfull \hbox (54.17572pt too wide) in paragraph at lines 48--49
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][] 
- []
-
-[9]) [10] (./05_loops.tex [11]) [12] (./06_introclasses.tex [13]) [14]
-(./07_methods.tex
-Overfull \hbox (3.77582pt too wide) in paragraph at lines 23--24
-[][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[15]
-Overfull \hbox (10.0758pt too wide) in paragraph at lines 59--60
-[][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (47.87573pt too wide) in paragraph at lines 74--75
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][] 
- []
-
-
-Overfull \hbox (16.3758pt too wide) in paragraph at lines 81--82
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (60.47571pt too wide) in paragraph at lines 82--83
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (47.87573pt too wide) in paragraph at lines 83--84
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (22.67578pt too wide) in paragraph at lines 95--96
-[][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
+) [8] (./03_datatypes.tex [9] [10]) [11] (./04_decisions.tex [12] [13])
+[14] (./05_loops.tex [15]) [16] (./06_introclasses.tex [17]) [18]
+(./07_methods.tex [19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16])
-[17] (./08_static.tex) [18] (./09_overloading.tex) [19] (./10_arrays.tex
+ [20])
+[21] (./08_static.tex) [22] (./09_overloading.tex) [23] (./10_arrays.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -399,34 +318,31 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
-) [20]
-(./11_searching.tex) [21] (./12_sorting.tex) [22] (./lecturenotes.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+) [24]
+(./11_searching.tex) [25] (./12_sorting.tex) [26] (./lecturenotes.aux) ) 
 Here is how much of TeX's memory you used:
- 3392 strings out of 493488
- 47619 string characters out of 3141326
- 160434 words of memory out of 3000000
- 6663 multiletter control sequences out of 15000+200000
+ 3397 strings out of 493488
+ 47710 string characters out of 3141326
+ 237434 words of memory out of 3000000
+ 6668 multiletter control sequences out of 15000+200000
  10544 words of font info for 37 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,9n,40p,606b,1592s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
-al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/
-texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
-exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/te
-xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on lecturenotes.pdf (22 pages, 162467 bytes).
+ 29i,9n,40p,606b,1610s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/l
+ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/lo
+cal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/loc
+al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loca
+l/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
+texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/te
+xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texl
+ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
+/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
+2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
+012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on lecturenotes.pdf (26 pages, 170432 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 128 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

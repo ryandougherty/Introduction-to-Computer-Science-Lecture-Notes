@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  27 JUL 2014 19:54
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  28 JUL 2014 17:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -250,14 +250,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 1.
-)
-\tf@toc=\write3
-\openout3 = `lecturenotes.toc'.
-
  [3
 
 
 ])
+\tf@toc=\write3
+\openout3 = `lecturenotes.toc'.
+
+ [4])
 Underfull \hbox (badness 10000) in paragraph at lines 8--56
 
  []
@@ -267,7 +267,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--56
 
  []
 
-[4] (./02_computers.tex
+[5] (./02_computers.tex
 Underfull \hbox (badness 10000) in paragraph at lines 13--16
 
  []
@@ -282,7 +282,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--28
 
  []
 
-[5]
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 35--38
 
  []
@@ -292,21 +292,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--53
 
  []
 
-[6]
+[7]
 \c@counter=\count133
- [7]
-Overfull \hbox (0.40485pt too wide) in paragraph at lines 126--127
+ [8]
+Overfull \hbox (0.40485pt too wide) in paragraph at lines 127--128
 []\OT1/cmr/m/n/10 What is the pro-gram that trans-lates Java byte-code in-struc
 -tions into machine-
  []
 
-) [8] (./03_datatypes.tex [9] [10]) [11] (./04_decisions.tex [12] [13])
-[14] (./05_loops.tex [15]) [16] (./06_introclasses.tex [17]) [18]
-(./07_methods.tex [19]
+) [9] (./03_datatypes.tex [10] [11]
+Underfull \vbox (badness 1102) has occurred while \output is active []
+
+ [12]
+Underfull \hbox (badness 10000) in paragraph at lines 148--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--168
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 209--212
+
+ []
+
+[14] [15] [16]) [17] (./04_decisions.tex [18] [19]) [20] (./05_loops.tex
+[21]) [22] (./06_introclasses.tex [23]) [24] (./07_methods.tex [25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20])
-[21] (./08_static.tex) [22] (./09_overloading.tex) [23] (./10_arrays.tex
+ [26])
+[27] (./08_static.tex) [28] (./09_overloading.tex) [29] (./10_arrays.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -318,13 +335,13 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
-) [24]
-(./11_searching.tex) [25] (./12_sorting.tex) [26] (./lecturenotes.aux) ) 
+) [30]
+(./11_searching.tex) [31] (./12_sorting.tex) [32] (./lecturenotes.aux) ) 
 Here is how much of TeX's memory you used:
- 3397 strings out of 493488
- 47710 string characters out of 3141326
- 237434 words of memory out of 3000000
- 6668 multiletter control sequences out of 15000+200000
+ 3440 strings out of 493488
+ 48084 string characters out of 3141326
+ 278434 words of memory out of 3000000
+ 6711 multiletter control sequences out of 15000+200000
  10544 words of font info for 37 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  29i,9n,40p,606b,1610s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -335,14 +352,16 @@ al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loca
 l/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
 texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/te
 xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texl
-ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
-/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
-012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on lecturenotes.pdf (26 pages, 170432 bytes).
+ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
+/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
+12/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
+2/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2012/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2012/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on lecturenotes.pdf (32 pages, 202986 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 156 PDF objects out of 1000 (max. 8388607)
+ 108 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

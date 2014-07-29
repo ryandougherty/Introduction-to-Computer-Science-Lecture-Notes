@@ -7,7 +7,7 @@ This chapter concerns basic knowledge of computers. In order to write programs f
 Java is an object-oriented programming language invented by Sun Microsystems in 1995, and Sun was acquired by Oracle in 2009. One large benefit of Java is that it is run in a $virtual machine$, which means that it can be run on almost all major platforms: Windows, Mac OS X, Linux, Solaris, etc. 
 
 \subsection{Java Program Structures}
-All Java programs follow the same basic structure. A typical Java file (with a ``.java" extension) is composed of 1 or more $classes$, which have 1 or more $methods$, which have 1 or more $statements$. We will give more rigor to what these terms mean later.
+All Java programs follow the same basic structure. A typical Java file (with a ``.java" extension) is composed of 1 or more $classes$, which have 1 or more $methods$, which have 1 or more $statements$. We will give more rigor to what these terms mean later. Java classes are (typically) provided in packages, which contain one 1 or more classes.
 
 \subsection{First Java Program}
 A typical first program is called a ``Hello, World" program to the screen. The reason that this is the first program for many programmers is that they can demonstrate that they know the basic structure of a Java program. 
@@ -92,6 +92,7 @@ System.out.println("Text");
 System.out.print("Text\n");
 \end{verbatim}
 \item \verb|\t| - a tab character. The text that follows \verb|\t| will appear in the same manner as a tab key is used in any other text document.
+\item \verb|\"| - to print a double quote.
 \end{itemize}
 \end{itemize}
 
@@ -131,6 +132,7 @@ By what name would you save this program on your hard disk?
 
 \subsection{Programming Exercises}
 
+\setcounter{counter}{1}
 \begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
 \item Write a program to print the following to the screen using a number of print statements:
 \begin{verbatim}

@@ -1,5 +1,228 @@
 \section{Data Types}
 
+\subsection{Motivation}
+Now that we know how to compile and run programs, and print to the screen, we will bump up the complexity of our programs a little. In this chapter, we will be exploring data types, and how to do basic calculations.
+
+\subsection{Types}
+There are 8 ``primitive" (fundamental) data types in Java (we will explain constraints that they have later):
+\begin{itemize}
+\item \verb|byte| - an integer with a small range.
+\item \verb|short| - same as \verb|byte|, but a larger range.
+\item \verb|int| - same as \verb|short|, but even larger range.
+\item \verb|long| - same as \verb|int|, but even still larger range.
+\item \verb|float| - a ``real" value, that has some precision.
+\item \verb|double| - same as \verb|float| but with more precision.
+\item \verb|boolean| - a type that takes one of two possible values: \verb|true|, or \verb|false|.
+\item \verb|char| - a Unicode character. Think of \verb|a| or \verb|b| as \verb|char|s.
+\end{itemize}
+
+\noindent Now, we give the range for each of the primitive data types (all inclusive on both ends):
+\begin{itemize}
+\item \verb|byte|: -128 to +127.
+\item \verb|short|: -32768 to +32767.
+\item \verb|int|: $-2^{31}$ to $+2^{31}-1$.
+\item \verb|long|: $-2^{63}$ to $+2^{63}-1$.
+\item \verb|float|: $1.4 \times 10^{-45}$ to $3.4 \times 10^{38}$.
+\item \verb|double|: $4.9 \times 10^{-324}$ to $1.7 \times 10^{308}$.
+\item \verb|boolean|: \verb|true| or \verb|false|.
+\item \verb|char|: 0 to 65535.
+\end{itemize}
+
+\noindent Now that we know the 8 fundamental data types, we want to know how to use them. To do that, we have to $declare$ a $variable$ with a type.
+
+\subsection{Variable Declaration}
+Like classes in the previous chapter, declaring variables follow the same basic structure, which is:
+\begin{center}
+$Type$ $VariableName = $ $Value;$
+\end{center}
+
+\noindent For example, if we want a \verb|int| variable called \verb|val| to have a value of 2, we would write the line of code as:
+
+\begin{lstlisting}
+int val = 2;
+\end{lstlisting}
+
+\noindent Also, we can declare several variables of the same type in the same line using a comma between the names:
+\begin{lstlisting}
+int val = 2, otherVal = 3;
+\end{lstlisting}
+Notes: 
+\begin{itemize}
+\item In a list of declarations, there is no need to declare the type twice.
+\item The convention in Java names is to follow camel casing: the first ``word" is lowercase, and the subsequent ``words" in the same variable are capitalized (see example above).
+\end{itemize}
+
+\noindent Now, there are only certain names that our Java variables can have. The rules are:
+\begin{itemize}
+\item The first character must be a letter (either upper or lowercase), the underscore symbol, or a dollar sign (``\$"). However, a variable name cannot start with a number. 
+\item Any character other than the first may be letters, underscores, the dollar sign, or also numbers. 
+\end{itemize}
+
+\noindent Here are some variable declarations using all primitive types:
+\begin{lstlisting}
+byte b = 1;
+short s = 2;
+int i = 300;
+long l = 1000L; // note the 'L'
+float f = 0.56f; // note the 'f'
+double d = 523.6; // no suffix
+boolean b = true;
+char c = 'a'; // chars are surrounded in single quotes
+\end{lstlisting}
+
+\noindent After we have initialized a variable, we can also modify it without having to declare it again. Here is an example:
+\begin{lstlisting}
+int i = 300;
+i = 301; // modifies i's value to be 301
+// int i = 301; // this causes a compiler error 
+		//(declare once)
+\end{lstlisting}
+
+\noindent Now that we know how to declare and modify values, we need to learn how to do various operations on them, such as addition, subtraction, multiplication, and division. An example showing all of them is the following (with comments):
+\begin{lstlisting}
+/* Addition */
+// int works the same as byte and short
+int i1 = 0, i2 = 3;
+int i3 = i1 + i2; // adds i1's value (0) and i2's (3)
+
+// doubles and floats work the same way:
+double d1 = 2.5, d2 = 3.0;
+float d3 = d1 + d2;
+float f1 = 2.5f, f2 = 3.0f;
+float f3 = f1 + f2;
+
+// Can add across types, but is promoted to "most precise"
+// If we add double + int, the result is a double
+int i4 = 4;
+double d4 = 5.3;
+double d5 = d4 + i4;
+
+// cannot do operations on booleans (compiler error)
+// boolean b1 = true + false;
+
+/* Subtraction */
+// Works with primitive types the same way as addition
+int i5 = 0, i6 = 3;
+int i7 = i5 - i6; // i6 has value -3
+
+/* Multiplication */
+// Multiplication is the same as addition in the same type
+// However, we promote to "most precise" value if multiple types
+int i8 = 5;
+double d6 = 5.3;
+double d7 = d6*i8; // promote i8 to a double valued 5.0
+
+/* Division */
+// Division is easy to understand except for when the numerator and denominator are both ints.
+int i9 = 10, i10 = 3;
+// What is i9 / i10? We expect 3.33333..., but we get 3 instead. Java does "integer division", where the numerator and denominator are both ints, which is truncating all the fractional parts.
+int i11 = i9 / i10; // i11 has value 3.
+// However, if we "cast" one of the values to a double, then we do not have this problem
+double d8 = (double) i9 / i10; // cast i9 to a double of value 10.0
+// d8 now has value 3.333333...
+\end{lstlisting}
+
+\noindent Another operation is called the mod operator (or ``remainder"):
+\begin{lstlisting}
+int i1 = 10, i2 = 3;
+int i3 = i1 % i2; // i3 has value 1, since 10 remainder 3 = 1.
+\end{lstlisting}
+
+\noindent We can also ``shorten" times when we are modifying the same value with another. For example:
+\begin{lstlisting}
+int i = 5;
+i += 3; // equivalent to: i = i + 3;
+i -= 3; // equivalent to: i = i - 3;
+i *= 3; // equivalent to: i = i * 3;
+i /= 3; // equivalent to: i = i / 3;
+\end{lstlisting}
+
+\noindent For \verb|int| variables, there are 2 operations that are done very often, so they were put into the language: increment and decrement:
+\begin{lstlisting}
+int i = 2;
+i++; // equivalent to: i += 1;
+i--; // equivalent to: i -= 1;
+\end{lstlisting}
+
+\subsection{String}
+Now that we fully understand how primitive data types work, we can move on to using classes provided by the Java API (Application Programmer Interface). One such class is provided in the Java package \verb|java.lang|, called String. This package is so often that Java automatically imports it for you, so you do not have to do extra work.
+\\ \\
+A String is a set of characters in between double quotes. Any character can be inside a string, except for a double quote. Examples are:
+\begin{lstlisting}
+String str1 = "I love";
+String str2 = "Java";
+String str3 = str1 + str2; // is now "I loveJava"
+// str3 is called the "concatenation" of str1 and str2
+int i1 = 3;
+str3 = str1 + i1; // has value "I love3"
+\end{lstlisting}
+
+\noindent However, there is another way to declare a String variable, and that is done using the Java keyword \verb|new|:
+\begin{lstlisting}
+String str1 = new String("I love"); // same as above
+\end{lstlisting}
+
+\noindent String is the only Java class that can declare (also called ``instantiate") a variable without the \verb|new| keyword. All other Java classes must be instantiated with this keyword.
+\\ \\
+Now we need to see what we can do with these String variables. As we covered in the last chapter, every Java class has one or more methods. The syntax for calling a method is:
+
+\begin{center}
+$variable.methodname(optional parameters)$
+\end{center}
+
+\noindent Examples of various methods in Java for the String class are:
+\begin{lstlisting}
+String str1 = "I love Java";
+/*String.toUpperCase() and toLowerCase*/
+String upper = str1.toUpperCase(); // "I LOVE JAVA"
+String lower = str1.toLowerCase(); // "i love java"
+
+/*String.replace(char c, char d)*/
+// Replaces all instances of c with d
+String repl = str1.replace('a', 'p'); // "I love Jpvp"
+
+// We can even chain method calls
+String myst = str1.replace('a', 'p').toUpperCase(); // "I LOVE JPVP"
+
+/*String.length() - int which is # of characters*/
+int len = str1.length(); // 11, since there are 11 characters
+
+/*String.charAt(int n) - gets the nth character*/
+// Strings are 0-indexed, so the first character is at index 0
+// Error at runtime if input >= length()
+char firstChar = str1.charAt(0); // has value 'I'
+char secondChar = str1.charAt(1); // has value ' '
+char lastChar = str1.charAt(str.length()-1); // 'a'
+
+/*String.substring(int n, int m)*/
+// gives a String that consists of index n through m, not inclusive on m
+String substr1 = str1.substring(0, 3); // "I lo"
+String substr2 = str1.substring(2, 6); // "love"
+
+/*String.indexOf(char c)*/
+// Returns index (int) of the first instance of c; otherwise, -1
+int found1 = str1.indexOf('o'); // 4
+int found2 = str1.indexOf('f'); // -1
+\end{lstlisting}
+
+\subsection{Scanner}
+Now that we know how to modify String variables, it is important to know how to get input from the user so that we can make our programs usable. For that, we use the Scanner class in the \verb|java.util| package.
+\\ \\
+However, since this class is not \verb|java.lang|, we must $import$ it from Java, by putting an import statement at the beginning of our file:
+\begin{lstlisting}
+import java.util.Scanner; // import the Scanner class from the java.util package
+// Equivalent: import java.util.*; // import everything from this package
+public class SomeClass {
+	// ...
+}
+\end{lstlisting}
+
+\noindent So how do we use this class? We must initialize it with the \verb|new| keyword:
+\begin{lstlisting}
+Scanner s = new Scanner(System.in); // System.in means from the keyboard
+\end{lstlisting}
+\noindent This code creates an variable (often called ``object" in this case, since it is a class) in which we can call various methods on it to get input from the user. 
+
 \subsection{Written Exercises}
 
 \setcounter{counter}{1}

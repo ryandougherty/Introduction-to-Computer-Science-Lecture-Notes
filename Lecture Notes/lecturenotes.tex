@@ -6,16 +6,22 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{enumitem}
 \usepackage{listings}
-\lstset{language=Java,
+\lstset{
 	basicstyle=\ttfamily,
-	keywordstyle=\color{blue}\ttfamily,
-	stringstyle=\color{red}\ttfamily,
-	showstringspaces=false,
+	breaklines=true,
 	commentstyle=\color{ForestGreen}\ttfamily,
-	morecomment=[l][\color{magenta}]{\#}}
-\lstset{breaklines=true} 
+	frame=single,
+	keywordstyle=\color{blue}\ttfamily,
+	language=Java,
+	numbers=left,
+	stringstyle=\color{red}\ttfamily,
+	showstringspaces=false
+	morecomment=[l][\color{magenta}]{\#},
+	}
 \usepackage{llncsdoc}
 %
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \newenvironment{dedication}
   {\clearpage           % we want a new page
@@ -30,22 +36,50 @@
   }
   
 \begin{document}
-\markboth{CSE110 Lecture Notes}{CSE110 Lecture Notes}
-\thispagestyle{empty}
-\begin{flushleft}
-\LARGE\bfseries Ryan Dougherty\\[2cm]
-\end{flushleft}
-\rule{\textwidth}{1pt}
-\vspace{2pt}
-\begin{flushright}
-\Huge
-\begin{tabular}{@{}l}
-CSE110 Lecture Notes\\[6pt]
-{\Large Version 1.0}
-\end{tabular}
-\end{flushright}
-\rule{\textwidth}{1pt}
+\begin{center}
+
+\textsc{\LARGE Arizona State University}\\[1.5cm]
+
+\textsc{\Large School of Computing, Informatics, and Decision Systems Engineering}\\[0.5cm]
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries CSE 110 Lecture Notes \\[0.4cm] }
+
+\HRule \\[1.5cm]
+
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{center} \large
+\emph{Author:}\\
+\textsc{Ryan Dougherty}
+\end{center}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\end{minipage}
+
 \vfill
+
+% Bottom of the page
+%{\large \today}
+
+\end{center}
+%\markboth{CSE110 Lecture Notes}{CSE110 Lecture Notes}
+%\thispagestyle{empty}
+%\begin{flushleft}
+%\LARGE\bfseries Ryan Dougherty\\[2cm]
+%\end{flushleft}
+%\rule{\textwidth}{1pt}
+%\vspace{2pt}
+%\begin{flushright}
+%\Huge
+%\begin{tabular}{@{}l}
+%CSE110 Lecture Notes\\[6pt]
+%{\Large Version 1.0}
+%\end{tabular}
+%\end{flushright}
+%\rule{\textwidth}{1pt}
+%\vfill
 \newpage
 
 \begin{dedication}

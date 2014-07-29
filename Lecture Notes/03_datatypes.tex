@@ -78,6 +78,8 @@ i = 301; // modifies i's value to be 301
 		//(declare once)
 \end{lstlisting}
 
+\subsection{Primitive Operators}
+
 \noindent Now that we know how to declare and modify values, we need to learn how to do various operations on them, such as addition, subtraction, multiplication, and division. An example showing all of them is the following (with comments):
 \begin{lstlisting}
 /* Addition */
@@ -113,12 +115,12 @@ double d6 = 5.3;
 double d7 = d6*i8; // promote i8 to a double valued 5.0
 
 /* Division */
-// Division is easy to understand except for when the numerator and denominator are both ints.
+// Division is easy to understand except for when the numerator and denominator are both int/short/byte.
 int i9 = 10, i10 = 3;
 // What is i9 / i10? We expect 3.33333..., but we get 3 instead. Java does "integer division", where the numerator and denominator are both ints, which is truncating all the fractional parts.
 int i11 = i9 / i10; // i11 has value 3.
 // However, if we "cast" one of the values to a double, then we do not have this problem
-double d8 = (double) i9 / i10; // cast i9 to a double of value 10.0
+double d8 = (double)i9 / i10; // cast i9 to a double of value 10.0
 // d8 now has value 3.333333...
 \end{lstlisting}
 
@@ -142,6 +144,47 @@ i /= 3; // equivalent to: i = i / 3;
 int i = 2;
 i++; // equivalent to: i += 1;
 i--; // equivalent to: i -= 1;
+\end{lstlisting}
+
+\subsection{Boolean}
+
+\noindent So how do we compare values? There are various operators (parentheses added for clarity - they are not needed):
+\begin{lstlisting}
+int i1 = 5, i2 = 6;
+boolean larger = (i1 > i2); // false, since 5 < 6
+boolean largerEq = (i1 >= i2); // also false
+boolean smaller = (i1 < i2); // true
+boolean smallerEq = (i1 <= i2); // true
+boolean notEq = (i1 != i2); // true
+boolean eq = (i1 == i2); // false
+// Note that == means compare value, = means assign
+\end{lstlisting}
+
+\noindent There are also operators to work with booleans: and, or, and not.
+\begin{lstlisting}
+/* And = && */
+boolean t = true, f = false;
+boolean andTT = t && t; // true
+boolean andTF = t && f; // false
+boolean andFT = f && t; // false
+boolean andFF = f && f; // false
+/* Or = || */
+boolean orTT = t || t; // true
+boolean orTF = t || f; // true
+boolean orFT = f || t; // true
+boolean orFF = f || f; // false
+/* Not = ! */
+boolean notT = !t; // false
+boolean notF = !f; // true
+
+// We can use multiple operators at once:
+boolean myst = !(true && (true || false)); // false
+\end{lstlisting}
+
+\noindent What if we do not want our variable values to change? There is a way, with the \verb|final| keyword:
+\begin{lstlisting}
+final int NUM = 100; // convention: all capital letters for final variables
+// NUM++; // compilation error
 \end{lstlisting}
 
 \subsection{String}
@@ -199,6 +242,13 @@ char lastChar = str1.charAt(str.length()-1); // 'a'
 String substr1 = str1.substring(0, 3); // "I lo"
 String substr2 = str1.substring(2, 6); // "love"
 
+/*String.equals(String other)*/
+// gives true (boolean) if the first String is exactly the same as the other
+boolean equal1 = substr1.equals(substr2); // false
+boolean equal2 = "Equal".equals("Equal"); // true
+// We can also check for equality ignoring the case
+boolean equal3 = "Equal".equalsIgnoreCase("eqUal"); // true
+
 /*String.indexOf(char c)*/
 // Returns index (int) of the first instance of c; otherwise, -1
 int found1 = str1.indexOf('o'); // 4
@@ -221,7 +271,140 @@ public class SomeClass {
 \begin{lstlisting}
 Scanner s = new Scanner(System.in); // System.in means from the keyboard
 \end{lstlisting}
-\noindent This code creates an variable (often called ``object" in this case, since it is a class) in which we can call various methods on it to get input from the user. 
+\noindent This code creates an variable (often called ``object" in this case, since it is a class) in which we can call various methods on it to get input from the user. There are various ways of getting input from the user:
+
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+int x = s.nextInt(); // the first integer entered by the user (after pushing the enter/return key) will be put into x
+// If an integer is not entered, then a run-time error will occur.
+double y = s.nextDouble(); // if a user enters a double
+String str1 = s.next(); // this is the next "word" (does not include spaces)
+String str2 = s.nextLine(); // this is the entire line of characters before pressing the enter/return key
+\end{lstlisting}
+
+\subsection{Example: Putting it all together}
+Suppose we were given the task of having a menu at a restaurant, with a menu of: 
+\begin{itemize}
+\item Hamburgers = \$2.75 each
+\item Cheeseburgers = \$3.25 each
+\item Drinks = \$2.00 each
+\end{itemize}
+And we allowed as many choices for each as the user wanted. Our task is to take in the user's input of how much of each item he/she wants, and calculate the total. Suppose the user asked for 2 hamburgers, 1 cheeseburger, and 3 drinks. Therefore, the total will be: $2.75 \times 2 + 3.25 \times 1 + 2.00 \times 3 = 14.75$.
+\\ \\
+First, we need to set up our class. Let's call it RestaurantMenu:
+\begin{lstlisting}
+public class RestaurantMenu { // begin class
+     public static void main(String[] args) { // main
+     }
+}
+\end{lstlisting}
+
+Now, we know we need to take input from the user. Therefore, we need to create a Scanner variable (and do not forget to import the \verb|java.util| package!):
+
+\begin{lstlisting}
+import java.util.Scanner; // get user input
+public class RestaurantMenu { // begin class
+     public static void main(String[] args) { // main
+          Scanner input = new Scanner(System.in);
+     }
+}
+\end{lstlisting}
+
+\noindent We know that there are 3 items on the board, and that the user will enter three integers. Therefore, we need to get these integers from the user. It may be helpful to print to the user how much of each item to input: 
+
+\begin{lstlisting}
+import java.util.Scanner; // get user input
+public class RestaurantMenu { // begin class
+     public static void main(String[] args) { // main
+          // Menu
+          System.out.println("Menu");
+          System.out.println("Hamburger - $2.75");
+          System.out.println("Cheeseburger - $3.25");
+          System.out.println("Drink - $2.00");
+          // Get Inputs from user
+          Scanner input = new Scanner(System.in);
+          System.out.println("# hamburgers?");
+          int numHamburgers = input.nextInt();
+          System.out.println("# cheeseburgers?");
+          int numCheeseburgers = input.nextInt();
+          System.out.println("# drinks?");
+          int numDrinks = input.nextInt();
+     }
+}
+\end{lstlisting}
+
+\noindent Now we need to include the price of each item in some way. It would be preferable to use \verb|final| variables to store the prices, since we can guarantee that the prices will never change (also preferable to put them near the beginning of the main method):
+\begin{lstlisting}
+import java.util.Scanner; // get user input
+public class RestaurantMenu { // begin class
+     public static void main(String[] args) { // main
+          // Prices
+          final double HAM_PRICE = 2.75;
+          final double CHEESE_PRICE = 3.25;
+          final double DRINK_PRICE = 2.00;
+          // Menu
+          System.out.println("Menu");
+          System.out.println("Hamburger - $2.75");
+          System.out.println("Cheeseburger - $3.25");
+          System.out.println("Drink - $2.00");
+          // Get inputs from user
+          Scanner input = new Scanner(System.in);
+          System.out.println("# hamburgers?");
+          int numHamburgers = input.nextInt();
+          System.out.println("# cheeseburgers?");
+          int numCheeseburgers = input.nextInt();
+          System.out.println("# drinks?");
+          int numDrinks = input.nextInt();
+     }
+}
+\end{lstlisting}
+
+\noindent The last two parts are to compute the total price based on the user input, and to print out the result to the user:
+\begin{lstlisting}
+import java.util.Scanner; // get user input
+public class RestaurantMenu { // begin class
+     public static void main(String[] args) { // main
+          // Prices
+          final double HAM_PRICE = 2.75;
+          final double CHEESE_PRICE = 3.25;
+          final double DRINK_PRICE = 2.00;
+          // Menu
+          System.out.println("Menu");
+          System.out.println("Hamburger - $2.75");
+          System.out.println("Cheeseburger - $3.25");
+          System.out.println("Drink - $2.00");
+          // Get Inputs from user
+          Scanner input = new Scanner(System.in);
+          System.out.println("# hamburgers?");
+          int numHamburgers = input.nextInt();
+          System.out.println("# cheeseburgers?");
+          int numCheeseburgers = input.nextInt();
+          System.out.println("# drinks?");
+          int numDrinks = input.nextInt();
+          // Calculate total price
+          double totalPrice = numHamburgers*HAM_PRICE;
+          totalPrice += numCheeseburgers*CHEESE_PRICE;
+          totalPrice += numDrinks*DRINK_PRICE;
+          System.out.println("Total Price: " + totalPrice);
+     }
+}
+\end{lstlisting}
+
+\subsection{Math}
+There is another class, called Math (in the \verb|java.lang| package) that provides some useful functionalities:
+\begin{lstlisting}
+/* Square root */
+double num1 = 105.0;
+double d1 = Math.sqrt(num1);
+
+/* PI - constant */
+double pi = Math.PI; 
+
+/* Pow - take first double to power of second */
+double d2 = 3.5, d3 = 4.3;
+double d4 = Math.pow(d2, d3); // = 3.5^4.3
+\end{lstlisting}
+
 
 \subsection{Written Exercises}
 
@@ -243,13 +426,13 @@ public class Example {
 \begin{lstlisting}
 public class Example {
      public static void main(String[] args) {
-          String str = new String("Arizona state university");
-          char ch1 = str.toLowerCase().toUpperCase().charAt(0);
-          char ch2 = str.toUpperCase().charAt(8);
-          char ch3 = str.toUpperCase().charAt(str.length() - 1);
-          System.out.println("character 1 is: " + ch1);
-          System.out.println("character 2 is: " + ch2);
-          System.out.println("character 3 is: " + ch3);
+          String s = new String("Arizona state university");
+          char ch1 = s.toLowerCase().toUpperCase().charAt(0);
+          char ch2 = s.toUpperCase().charAt(8);
+          char ch3 = s.toUpperCase().charAt(s.length() - 1);
+          System.out.println("ch 1 is: " + ch1);
+          System.out.println("ch 2 is: " + ch2);
+          System.out.println("ch 3 is: " + ch3);
      }
 }
 \end{lstlisting}
@@ -260,41 +443,38 @@ What will be the output?
 public class Example {
      public static void main(String[] args) {
           int num1 = 4, num2 = 5;
-          System.out.println("4" + "5");
-          System.out.println(num1 + num2);
-          System.out.println("num1" + "num2");
+          System.out.println("4"+"5");
+          System.out.println(num1+num2);
+          System.out.println("num1"+"num2");
           System.out.println(4+5);
      }
 }
 \end{lstlisting}
 What will be the output?
 
-\item Which of the following invokes the method length() of the object str and stores the result in val of type int?
+\item Which of the following invokes the method length() of the String str and stores the result in val of type int?
 \begin{lstlisting}
-a) int val = str.length();
-b) int val = length.str();
-c) int val = length().str;
-d) int val = length(str);
+int val = str.length();
+int val = length.str();
+int val = length().str;
+int val = length(str);
 \end{lstlisting}
 
 \item Evaluate each of the following expressions.
 \begin{lstlisting}
 String s = "Programming is Fun";
 String t = "Workshop is cool";
-a) System.out.println(s.charAt(0) + t.substring(3, 4));
-b) System.out.println(t.substring(7));
+System.out.println(s.charAt(0)+t.substring(3, 4));
+System.out.println(t.substring(7));
 \end{lstlisting}
 
-\item Evaluate each of the following expressions.
+\item Evaluate each of the following expressions, assuming j is an int with value 11, k is an int with value 3, and s is a String with value ``Ford Rivers".
 \begin{lstlisting}
-int j = 11;
-int k = 3;
-String s = "Ford Rivers";
-a) j / k
-b) j % k
-c) s.substring(1, 5)
-d) s.length()
-e) s.charAt(3)
+j / k
+j % k
+s.substring(1, 5)
+s.length()
+s.charAt(3)
 \end{lstlisting}
 
 \item True or False? The type String is a primitive data type.
@@ -314,7 +494,7 @@ public class Question {
           System.out.println(str.equals("hello"));
           System.out.println("pizza".toUpperCase());
           System.out.println(Math.pow(2, 4));
-          double num4 = Math.sqrt(16);
+          double num4 = Math.sqrt(16.0);
           System.out.println(num4);
      }
 }
@@ -324,13 +504,13 @@ public class Question {
 \begin{lstlisting}
 public class Question {
      public static void main(String[] args) {
-          String s1 = new String("Clinton, Hillary");
+          String s1 = "Clinton, Hillary";
           String s2 = new String("Obama, Barack");
           System.out.println(s1.charAt(2));
-          System.out.println(s1.charAt(s1.length() - 1));
+          System.out.println(s1.charAt(s1.length()-1));
           System.out.println(s2.toUpperCase());
           System.out.println(s2.substring(
-               s2.indexOf(",") + 2, s2.length());
+               s2.indexOf(",")+2, s2.length());
      }
 }
 \end{lstlisting}

@@ -253,6 +253,13 @@ boolean equal3 = "Equal".equalsIgnoreCase("eqUal"); // true
 // Returns index (int) of the first instance of c; otherwise, -1
 int found1 = str1.indexOf('o'); // 4
 int found2 = str1.indexOf('f'); // -1
+
+/*String.compareTo(String other)*/
+// Returns int showing lexicographic ordering of strings according to ASCII table (negative if first < second, 0 if equal, positive if first > second)
+int c1 = "A".compareTo("B"); // negative
+int c2 = "A".compareTo("b"); // more negative, lowercase has higher ASCII value
+int c3 = "A".compareTo("A"); // 0
+int c4 = "B".compareTo("A"); // positive
 \end{lstlisting}
 
 \subsection{Scanner}

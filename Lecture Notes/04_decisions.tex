@@ -1,5 +1,121 @@
 \section{Decisions}
 
+\subsection{Motivation}
+We now know basic data types and how to use them. Now, we will see how to execute conditional code based on values. We will cover if, if-else, and switch statements.
+
+\subsection{If Statements}
+Suppose we were given a task of printing ``True" only when a value entered by the user was larger than another value. Currently, we do not know of a way to do this. Therefore, we have if statements. They have the form:
+\begin{center}
+$if(condition) \{ ... \}$
+\end{center}
+where ``..." means other lines of code, and condition is evaluated to a boolean value. The rule for if statements is: if the condition is true, then the code between the braces is executed; if false, then it is not executed. If we have one line of code that will be executed in the if statement, then the braces are optional:
+\begin{lstlisting}
+int x = 8;
+if (x > 7)
+     System.out.print("This one line");
+\end{lstlisting}
+However, the second line after the if statement in the following example will not execute, even though it is indented:
+\begin{lstlisting}
+int x = 8;
+if (x > 7)
+     System.out.print("This one line");
+     System.out.println("What about this line?");
+\end{lstlisting}
+To fix this, we add braces:
+\begin{lstlisting}
+int x = 8;
+if (x > 7) {
+     System.out.print("This one line");
+     System.out.println("What about this line?");
+}
+\end{lstlisting}
+and therefore, both lines will print.
+\\ \\
+Now suppose we want to execute some code when the condition is true, and some other code when the condition is false (and only when it is false). Therefore, we need an if-else statement, which is of the form:
+\begin{center}
+$if(condition) \{...\} else \{...\}$
+\end{center}
+If the condition is false, then the code in the ``else" section will automatically execute, and the code in the ``if" section will not. If the condition is true, then the ``else" section will not execute, and the ``if" section will.
+\\ \\
+Suppose we have been given a task of printing ``true" if the user's input is greater than or equal to 8, and ``false" otherwise. Our code then will look like:
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+int input = s.nextInt();
+if (input >= 8) {
+     System.out.print("true");
+} else {
+     System.out.print("false");
+}
+\end{lstlisting}
+We can even chain multiple if-else statements together (and even nested ones!):
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+int input = s.nextInt();
+if (input >= 8) {
+     if (input == 8) {
+          System.out.print("Equal to 8");
+     } else {
+          System.out.print("Larger than 8");
+     }
+} else if (input >= 4) {
+     if (input == 4) {
+          System.out.print("Equal to 4");
+     } else {
+          System.out.print("Larger than 4, < 8");
+     }
+} else {
+     System.out.print("Less than 4");
+}
+\end{lstlisting}
+
+\subsection{Switch Statements}
+An alternative to if-else statements are switch statements, because if-else statements can be very complex, and can grow very long. A switch statement structure consists of 1 or more case statements (with an optional default case).
+\begin{itemize}
+\item Each case statement is of the form: \verb|case value: /* statements */|. At the end of the code section for a case statement, an optional \verb|break;| statement is allowed. However, not putting this statement at the end of the code section for the case statement will immediately execute the next case statement, regardless of the value.
+\item An optional \verb|default:| case statement at the end of the switch block is allowed, which is executed if the input value is not equal to any other case statement's value.
+\end{itemize}
+For example, if we were to print ``1" if the input value is equal to 1, and ``2" if equal to 2, and ignore any other inputs, our code might look like:
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+int input = s.nextInt();
+switch(input) {
+     case 1:
+          System.out.print("1");
+          break;
+     case 2:
+          System.out.print("2");
+          break;
+}
+\end{lstlisting}
+Now, if we remove the break statements:
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+int input = s.nextInt();
+switch(input) {
+     case 1:
+          System.out.print("1");
+     case 2:
+          System.out.print("2");
+}
+\end{lstlisting}
+this code will output ``12" if the input is 1, and ``2" if the input is 2, which is not the behavior we might want.
+\\ \\
+On the other hand, if we want to add the requirement of printing ``other" if we have any other value than 1 or 2, then we use a default statement:
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+int input = s.nextInt();
+switch(input) {
+     case 1:
+          System.out.print("1");
+          break;
+     case 2:
+          System.out.print("2");
+          break;
+     default:
+          System.out.print("other");
+          break;
+}
+\end{lstlisting}
 \subsection{Written Exercises}
 
 \setcounter{counter}{1}
@@ -51,10 +167,10 @@ Fill in the missing condition to check if str1 and str2 are the same.
 
 \item Evaluate the following expressions, assuming that x = -2 and y = 3.
 \begin{lstlisting} 
-a) x <= y 
-b) (x < 0) || (y < 0)
-c) (x <= y) && (x < 0)
-d) ((x + y) > 0) && !(y > 0)
+x <= y 
+(x < 0) || (y < 0)
+(x <= y) && (x < 0)
+((x + y) > 0) && !(y > 0)
 \end{lstlisting}
 
 \item Write the output of the following code:

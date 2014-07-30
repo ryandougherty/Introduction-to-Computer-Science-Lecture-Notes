@@ -1,5 +1,56 @@
 \section{Loops}
 
+\subsection{Motivation}
+Now we know how to execute conditional code. This chapter will greatly increase our powers in what we can do with programming, by being able to execute code many times without having to re-write (or copy and paste) code over and over.
+
+\subsection{Introduction to Loops}
+Loops are a way of executing some code an arbitrary number of times. What determines the number of times a loop executes is based largely on a condition, just like if and switch statements were. There are three kinds of loops in Java:
+\begin{itemize}
+\item \verb|for| loops
+\item \verb|while| loops
+\item \verb|do|-\verb|while| loops
+\end{itemize}
+
+\subsection{While loops}
+
+\subsection{Do-While loops}
+
+\subsection{For loops}
+For loops are when we know precisely how many times the for loop will execute. However, they are equivalent to while loops (i.e. one can construct a for loop from a while loop, and vice versa). All for loops have the same structure:
+\begin{center}
+$for(initialization; condition; modification) \{...\}$
+\end{center}
+\begin{itemize}
+\item Initialization - creating a variable, usually called the ``loop control" variable.
+\item Condition - checking a condition, usually related to the loop control variable, against some value. The loop will continue to iterate (and do the modification step) as long as the condition is true.
+\item Modification - modify, usually the loop control variable, at each iteration of the loop.
+\end{itemize}
+For example, let's say we are given the problem of summing all of the integers from 1 to n, where n is an integer $\ge 1$. An example solving this problem is the following:
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+int n = s.nextInt();
+int sum = 0;
+// put some kind of for loop here
+System.out.println(sum);
+\end{lstlisting}
+Now we need to reason how to construct our for loop. Let's initialize a loop control variable, called ``i", to be 1. Then, for each iteration of the loop, add i to sum, and at each iteration, add 1 to i. An ``unraveling" of the loop's logic will be this:
+\begin{itemize}
+\item sum = 0.
+\item 1st iteration of loop: i = 1, add to sum, sum = 1, add 1 to i (i = 2).
+\item 2nd iteration of loop: i = 2, add to sum, sum = 3, add 1 to i (i = 3).
+\item 3rd iteration of loop: i = 3, add to sum, sum = 6, add 1 to i (i = 3).
+\end{itemize}
+and so on. By this logic, we want the loop to stop at n, inclusive. So, we need to have a condition of \verb|i <= n|. And on each loop, we execute \verb|i++|. Therefore, our final code will be:
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+int n = s.nextInt();
+int sum = 0;
+for(int i=0; i<=n; i++) {
+	sum += i; // add to sum
+}
+System.out.println(sum);
+\end{lstlisting}
+
 \subsection{Written Exercises}
 
 \setcounter{counter}{1}

@@ -6,14 +6,75 @@ Now we know how to execute conditional code. This chapter will greatly increase 
 \subsection{Introduction to Loops}
 Loops are a way of executing some code an arbitrary number of times. What determines the number of times a loop executes is based largely on a condition, just like if and switch statements were. There are three kinds of loops in Java:
 \begin{itemize}
-\item \verb|for| loops
 \item \verb|while| loops
 \item \verb|do|-\verb|while| loops
+\item \verb|for| loops
 \end{itemize}
 
 \subsection{While loops}
+While loops are the simplest to understand kind of loop. The structure of a while loop is:
+\begin{center}
+$while(condition) \{...\}$
+\end{center}
+The semantics are: the loop will continue as long as the condition evaluates to true. The main reason while loops are used is that we may not know the number of times a loop will occur. If we do, we usually use a \verb|for| loop (see below). However, both while and for loops can be converted back and forth.
+\\ \\
+For example, let's say we are given a task of displaying a positive integer that the user enters, and continue doing so until the user enters 0. Setting up is easy:
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+while(/* something */) {
+	// somehow take user input and display it
+}
+\end{lstlisting}
+Let's initialize an \verb|int| variable, initialized to the first input a user gives:
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+System.out.println("Enter an integer:");
+int input = s.nextInt();
+while(/* something */) {
+	// somehow take user input and display it
+}
+\end{lstlisting}
+Now, we need to create the condition for the while loop. We stop after the user enters 0, so let's make that condition (and display it):
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+System.out.println("Enter an integer:");
+int input = s.nextInt();
+while(input != 0) {
+	System.out.println(input);
+	// anything else go here?
+}
+\end{lstlisting}
+This code seems good, but unfortunately we can encounter what is called an ``infinite loop", which does not stop looping. If we enter a non-zero integer, then we print that output. Then since there is nothing else to do in the loop body, we check the condition again, which evaluates to true, prints out, loops back, prints out, etc. We need to get the user input again at the end of the loop:
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+System.out.println("Enter an integer:");
+int input = s.nextInt();
+while(input != 0) {
+	System.out.println(input);
+	System.out.println("Enter another integer:");
+	input = s.nextInt(); // avoid infinite loop
+}
+\end{lstlisting}
+Now our solution code for the example is correct.
 
 \subsection{Do-While loops}
+Do-While loops are the same as while loops, but guarantee that the loop body will be executed at least once. Remember our earlier while loop example: if we initially entered 0, then the loop's condition evaluates to false, and does not execute the body. Therefore, it loops 0 times. 
+\\ \\
+The structure of a do-while loop is:
+\begin{center}
+$do \{ ... \} while(condition);$
+\end{center}
+Note: the semicolon after the last parentheses of the while's condition is necessary. For example, if we modify our example from above to be a do-while loop, we guarantee that the user must enter at least one integer:
+\begin{lstlisting}
+Scanner s = new Scanner(System.in);
+System.out.println("Enter an integer:");
+int input = s.nextInt();
+do {
+	System.out.println(input);
+	System.out.println("Enter another integer:");
+	input = s.nextInt(); // avoid infinite loop
+} while(input != 0);
+\end{lstlisting}
 
 \subsection{For loops}
 For loops are when we know precisely how many times the for loop will execute. However, they are equivalent to while loops (i.e. one can construct a for loop from a while loop, and vice versa). All for loops have the same structure:

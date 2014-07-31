@@ -22,6 +22,22 @@
 \usepackage{llncsdoc}
 %
 
+\newcommand\invisiblesection[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \sectionmark{#1}}
+  
+\newcommand\newsection[1]{
+\begin{center}
+  \invisiblesection{#1}
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries #1 \\[0.4cm] }
+\HRule \\[0.4cm]
+\end{center}
+}
+
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \newenvironment{dedication}

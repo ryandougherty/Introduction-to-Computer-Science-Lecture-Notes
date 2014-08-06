@@ -1,5 +1,21 @@
 \newsection{Method Overloading}
 
+\subsection{Motivation}
+Now that we know how to make instance and class methods, we want to be able to have multiple methods of the same name but take different arguments. This process is called ``method overloading".
+
+\subsection{Overloading}
+To have method overloading (i.e. have the same method name), the signature of the method has to be different, which includes the parameters. If we want to have a method called ``print" and want to print ``double" if the input is a double, and ``int" if the input is an int, we probably will design our code like this:
+\begin{lstlisting}
+public void print(double d) {
+     System.out.print("double");
+}
+// overloaded method:
+public void print(int i) {
+     System.out.print("int");
+}
+\end{lstlisting}
+However, if we have multiple methods with the same name, same parameters, but a different type, we have a compiler error. The reason for this is that there can be ambiguity in which method to choose.
+
 \subsection{Written Exercises}
 
 \setcounter{counter}{1}

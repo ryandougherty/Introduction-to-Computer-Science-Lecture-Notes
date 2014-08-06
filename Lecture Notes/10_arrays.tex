@@ -1,5 +1,49 @@
 \newsection{Arrays}
 
+\subsection{Motivation}
+Arrays are a very powerful tool in a programmer's arsenal. They allow managing many variables at once without much hassle.
+
+\subsection{Arrays}
+The typical structure for creating an array is:
+\begin{center}
+$<type>[] <name> = new <type>[<integer>];$
+\end{center}
+where $<integer>$ is greater than 0. For example, if we want to create an array of \verb|int| variables with 10 elements, we can construct it like this:
+\begin{lstlisting}
+int[] array = new int[10]; // 10 elements
+\end{lstlisting}
+Now how do we access or modify elements of an array? Here are some code examples on how to do so:
+\begin{lstlisting}
+int[] array = new int[100]; // 100 elements
+// By default, each element is 0 (primitives) or null (objects)
+// indexes are same as in String, etc. 0 - 99 indexes in this array
+array[0] = 10; // set first element to 10
+array[1] = 9; // set second element to 9
+array[99] = 255; // set last element to 255
+// array[100] = 100; // ArrayIndexOutOfBoundsException, because index is larger than the highest addressable one
+// array[-1] = -1; // Also an ArrayIndexOutOfBoundsException
+
+// Cannot assign/get different types or non-integer indexes:
+// String s = array[10]; // compiler error
+// array[10] = new String(); // compiler error
+// System.out.println(array[2.5]); // compiler error
+
+// However there is a ".length" attribute we can use (no parentheses):
+System.out.println(array.length); // 100
+// Therefore, we can set to the last element without a hardcoded number:
+array[array.length-1] = 100;
+// Getting an element is the same:
+int n = array[56]; // get index 56 element
+// We can loop over elements:
+for(int i = 0; i < array.length; i++) {
+     System.out.print(array[i] + " ");
+}
+// Or equivalently, the range-based for loop:
+for(int i : array) { // "for each i in array"
+     System.out.print(i + " ");
+}
+\end{lstlisting}
+
 \subsection{Written Exercises}
 
 \setcounter{counter}{1}

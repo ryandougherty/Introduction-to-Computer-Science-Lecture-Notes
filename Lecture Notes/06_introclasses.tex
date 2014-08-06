@@ -17,7 +17,176 @@ We have been using \verb|public| when we create our programs so far. Now we will
 \end{itemize}
 
 \subsection{Instance Variables}
-Instance variables are variables that exist inside a class when they are created. 
+Instance variables are variables that exist inside a class when they are created. We usually write instance variables to have a visibility of \verb|private|, to enforce what is called ``encapsulation", which means that we hide data (the instance variables) that we do not want ``outsiders" to change. 
+\\ \\
+For example, let's create a BankAccount class:
+\begin{lstlisting}
+public class BankAccount {
+	
+}
+\end{lstlisting}
+In order to make an instance of the class, we need to create a ``constructor" for the class, which executes code inside it when we use the \verb|new| operator on the class, in the exact same way that we have used it for other Java-provided classes. Notes about the constructor:
+\begin{itemize}
+\item No return type
+\item Optional parameters
+\item Any number of constructors allowed as long as they differ in signature (number of arguments or different types of arguments).
+\item The default constructor--with no arguments--is provided by Java if none is provided by the programmer.
+\end{itemize}
+For example, let's modify our BankAccount class that has the name of the person with the account, and a starting balance:
+\begin{lstlisting}
+public class BankAccount {
+     // visibility of public - need to see outside of class	
+     public BankAccount(String name, double startAmount) {
+	
+     }
+}
+\end{lstlisting}
+Now what do we do with these parameters? We need a way of ``saving" them inside the class for later use. That is where instance variables come in. Let's create our instance variables with public visibility for now:
+\begin{lstlisting}
+public class BankAccount {
+     public String personName;
+     public double balance;
+     
+     // visibility of public - need to see outside of class	
+     public BankAccount(String name, 
+          double startAmount) {
+          personName = name; // set name
+          balance = startAmount; // set amount
+          // optional: use this operator
+          // this.personName = name;
+          // this references the BankAccount class when inside the class, and what comes after the dot references the instance variable with that name
+     }
+}
+\end{lstlisting}
+And in our main (or other that instantiates a BankAccount object) method:
+\begin{lstlisting}
+public class BankAccountTest {
+     public static void main(String[] args) {
+          BankAccount b = new BankAccount("Jane", 0.0);
+     }
+}
+\end{lstlisting}
+Since we have declared our instance variables as \verb|public|, we can modify the corresponding values of our instance to anything we want:
+\begin{lstlisting}
+public class BankAccountTest {
+     public static void main(String[] args) {
+          BankAccount b = new BankAccount("Jane", 0.0);
+          b.personName = "Another Name";
+          b.balance = 500000;
+     }
+}
+\end{lstlisting}
+We can clearly see why this is not preferred. Therefore, we need to mark the visibility of our instance variables as private (and the operations above will result in a compile-time error):
+\begin{lstlisting}
+public class BankAccount {
+     private String personName;
+     private double balance;
+     
+     public BankAccount(String name, 
+          double startAmount) {
+          personName = name; // set name
+          balance = startAmount; // set amount
+     }
+}
+\end{lstlisting}
+This is a good start, but we want to be able to deposit or withdraw some amount into balance. Therefore, we need to use ``setters" (also called ``mutators") and ``getters" (also called ``accessors"):
+\begin{lstlisting}
+public class BankAccount {
+     private String personName;
+     private double balance;
+     
+     public BankAccount(String name, 
+          double startAmount) {
+          personName = name; // set name
+          balance = startAmount; // set amount
+     }
+     
+     /*
+     Getters have the form:
+     public <Type> get<NameOfVar>() {
+          return <NameOfVar>;
+     }
+     */
+     
+     // get the current balance
+     public double getBalance() {
+          return balance;
+     }
+     
+      /*
+     Setters have the form:
+     public void set<NameOfVar>(<Type> other) {
+          <Instance Var> = other;
+     }
+     */
+     
+     // set the balance to the input
+     public void setBalance(double other) {
+          balance = other;
+     }
+}
+\end{lstlisting}
+But this introduces the same problem as earlier - we can make our balance be any value we want. Therefore, we should get rid of the setter, and introduce a deposit method, which adds to the balance with the input. We can leave the getter because it does not modify the value of balance.
+\begin{lstlisting}
+public class BankAccount {
+     private String personName;
+     private double balance;
+     
+     public BankAccount(String name, 
+          double startAmount) {
+          personName = name; // set name
+          balance = startAmount; // set amount
+     }
+     
+     // get the current balance
+     public double getBalance() {
+          return balance;
+     }
+     
+     public void deposit(double amount) {
+          balance += amount;
+     }
+}
+\end{lstlisting}
+And in main, we can use these methods accordingly:
+\begin{lstlisting}
+public class BankAccountTest {
+     public static void main(String[] args) {
+          BankAccount b = new BankAccount("Jane", 0.0);
+          b.deposit(50.0);
+          System.out.print(b.getBalance());
+     }
+}
+\end{lstlisting}
+
+Notes about classes:
+\begin{itemize}
+\item A method (terminology to be covered in the next chapter) called toString, which returns a String, is commonly implemented among programmer-created classes. The returned String is a textual description of the state of the class and instance variables. For instance, we could use our BankAccount class and create a toString method that returns:
+\begin{verbatim}
+Name: Jane
+Balance: 50.0
+\end{verbatim}
+with the following code:
+\begin{lstlisting}
+public String toString() {
+     // return textual description
+     String toReturn = "";
+     toReturn += "Name: " + personName;
+     toReturn += "\n";
+     toReturn += "Balance: " + balance;
+     return toReturn;
+}
+\end{lstlisting}
+And when the object is printed out, even without calling \verb|.toString()|, the textual description will be printed:
+\begin{lstlisting}
+// in main
+BankAccount b = ...;
+System.out.print(b); // calls toString() automatically
+// equivalent to:
+System.out.print(b.toString());
+\end{lstlisting}
+\textbf{Note}: Not providing a \verb|toString()| method in a class, when printing an instance, will print a hash value (i.e. random letters and numbers) instead of what is expected, along with the name of the class.
+\end{itemize}
 
 \subsection{Written Exercises}
 

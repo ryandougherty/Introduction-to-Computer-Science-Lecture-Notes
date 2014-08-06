@@ -1,5 +1,26 @@
 \newsection{Methods}
 
+\subsection{Motivation}
+We have seen various ``methods" in the last chapter, but we want to improve on the functionality of our classes that we create. Therefore, we use methods to act on the objects we create. 
+
+\subsection{Structure}
+The typical structure of a method is:
+\begin{center}
+$<visibilitymodifier> <return type> <method name>(<optional parameters>) \{...\}$
+\end{center}
+For example, if I want to create a method called ``test" which takes a String parameter and returns nothing (i.e. \verb|void|), we would probably write it like this:
+\begin{lstlisting}
+public void test(String param) {
+     // ...
+}
+\end{lstlisting}
+Let's say that this method is in a class called ``A". Therefore, to call the method on the class, we would write (in main):
+\begin{lstlisting}
+A a = new A(); // or some other constructor
+a.test("Hello");
+\end{lstlisting}
+We say that we ``call" the method ``test" on the object ``a" of type ``A".
+
 \subsection{Written Exercises}
 
 \setcounter{counter}{1}

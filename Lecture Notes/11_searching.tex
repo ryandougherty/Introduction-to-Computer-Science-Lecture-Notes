@@ -1,5 +1,89 @@
 \newsection{Searching}
 
+\subsection{Motivation}
+Now that we know how to make arrays, we want to use them efficiently. We will cover 2 basic searching algorithms that will find elements in an array quickly and efficiently: linear and binary searching.
+
+\subsection{Linear Search}
+Linear Search is searching from one end of the array until the end, and stopping if we find the element that we desire. Pseudocode to match a linear search is:
+\begin{verbatim}
+function LinearSearch(array a, variable v):
+     for(item i in a):
+          if i == v:
+               return i; // or any non-"error" value (in array)
+     return -1; // some "error" value (not in array)
+\end{verbatim}
+For example, if we have an array of \verb|int| variables and we are searching for one, we can construct code such as this:
+\begin{lstlisting}
+public boolean linearSearch(int[] array, 
+     int toSearchFor) {
+     for (int i : array) {
+          if (i == toSearchFor) {
+               return true;
+          }
+     }
+     return false;
+}
+\end{lstlisting}
+However, this loop can be inefficient, because we have no guarantee what the ordering or contents of \verb|array| are. We have to search (on average) $\frac{n}{2}$ elements. Therefore, we cannot make a ``guess" as to improvements can be done.
+\\ \\
+However, if we can have a guarantee on the ordering of elements in the array, we can get better performance, as shown by binary search.
+
+\subsection{Binary Search}
+We can improve our algorithm by using binary search, on one condition: we \textbf{must} guarantee that the input array \textbf{is already sorted}. We will cover how to sort an unsorted array in the next chapter. Pseudocode of the algorithm is the following:
+\begin{verbatim}
+function BinarySearch(array a, int key):
+     low = 0, high = a.length;
+     while high >= low:
+          mid = average(low, high);
+          if a[mid] == key:
+               return mid; // found
+          else if a[mid] < key:
+               low = mid + 1;
+          else
+               high = mid - 1;
+     return -1; // not found
+\end{verbatim}
+The algorithm works like this: since the array is sorted, we check the middle value. If the value to search is larger than that middle value, we ``cut off" the lower half of the array, since we can guarantee it is not in that part (and likewise for less than). Then we check the middle half of the top half of the array, and keep adjusting what is the ``low" and ``high" ranges of what part of the array we are searching. We stop when we keep adjusting ``low" to the point that it is higher than ``high" (it does not make sense to search in a range that is backwards). At that point, we have not found our element, and we return.
+\\ \\
+For example, we can create a similar procedure in Java with a \verb|int| array (the concept works with Strings also, just comparing their lexicographic ordering instead):
+\begin{lstlisting}
+public int binarySearch(int[] array, int k) {
+     int min = 0, max = array.length-1;
+     while (max >= min) {
+          int mid = (min+max)/2;
+          if (a[mid] == k) {
+               return mid;
+          } else if (a[mid] < k) {
+               min = mid+1;
+          } else {
+               max = mid-1;
+          }
+     }
+}
+\end{lstlisting}
+Now for an example. Suppose I have an array consisting of $\{-3, -1, 2, 4, 7\}$. Clearly, the array is sorted, so we can use binary search. I want to search for the element 4. Here is the execution of binary search:
+\begin{verbatim}
+// Start binary search
+min = 0, max = 5
+// 7 >= -3, so enter while loop
+mid = (0+5)/2 = 2 (integer division)
+a[mid] = 2
+// check #1: 2 != 4, so skip if statement
+// check #2: 2 < 4, so enter else if
+min = 2+1 = 3
+
+// 2nd Execution:
+mid = (3+5)/2 = 4
+a[mid] = 7
+// check #1: 7 != 4, so skip if statement
+// check #2: 7 > 4, so skip else if statement
+max = 4-1 = 3
+
+// 3rd Execution:
+mid = (3+3)/2 = 3
+a[mid] = 4
+// check #1: 4 == 4, so return 4, success!
+\end{verbatim}
 \subsection{Written Exercises}
 
 \setcounter{counter}{1}

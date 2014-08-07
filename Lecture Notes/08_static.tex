@@ -28,7 +28,7 @@ System.out.println(b2.getNumInstances()); // 2
 Now if we change the code to not have the instance variable be static, then we have:
 \begin{lstlisting}
 public class B {
-     private int numInstances = 0; // start with a value
+     private int numInstances = 0; // remove "static"
      public B() {
           numInstances++;
      }
@@ -45,6 +45,24 @@ B b2 = new B();
 System.out.println(b2.getNumInstances()); // 1
 \end{lstlisting}
 which is not the behavior that we want.
+\\ \\
+Now we can get a larger understanding of various conventions we have been using:
+\begin{itemize}
+\item The main method's use of \verb|static| in its signature shows that only 1 copy of that method can exist at a time in a Java program. Therefore, there is no ambiguity as to where execution starts.
+\item For other code, such as \verb|Math.PI|, we can have an understanding as to possibly how it and some of its static methods are implemented:
+\begin{lstlisting}
+public class Math {
+     // ...
+     final static double PI = 3.1415926;
+     // ...
+     public static double pow(double base,
+          double exponent) { ... }
+     // ...
+     public static double sqrt(double num) { ... }
+}
+\end{lstlisting}
+
+\end{itemize}
 
 \subsection{Written Exercises}
 

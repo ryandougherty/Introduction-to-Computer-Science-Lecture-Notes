@@ -48,12 +48,13 @@ int val = 2, otherVal = 3;
 \end{lstlisting}
 Notes: 
 \begin{itemize}
-\item In a list of declarations, there is no need to declare the type twice.
+\item In a list of declarations, there is no need to declare the type twice (in fact, there will be a compiler error if this is done)
 \item The convention in Java names is to follow camel casing: the first ``word" is lowercase, and the subsequent ``words" in the same variable are capitalized (see example above).
 \end{itemize}
 
 \noindent Now, there are only certain names that our Java variables can have. The rules are:
 \begin{itemize}
+\item The name cannot be a ``keyword" (any of the words in this document that are colored blue, such as \verb|int|, \verb|public|, etc.).
 \item The first character must be a letter (either upper or lowercase), the underscore symbol, or a dollar sign (``\$"). However, a variable name cannot start with a number. 
 \item Any character other than the first may be letters, underscores, the dollar sign, or also numbers. 
 \end{itemize}
@@ -98,6 +99,8 @@ float f3 = f1 + f2;
 int i4 = 4;
 double d4 = 5.3;
 double d5 = d4 + i4;
+// But we can also "cast" (with parentheses) to the type we want if it is less "precise" - this truncates the fractional part:
+int casted = (int)(d4 + i4); // error without (int)
 
 // cannot do operations on booleans (compiler error)
 // boolean b1 = true + false;
@@ -152,30 +155,30 @@ i--; // equivalent to: i -= 1;
 \begin{lstlisting}
 int i1 = 5, i2 = 6;
 boolean larger = (i1 > i2); // false, since 5 < 6
-boolean largerEq = (i1 >= i2); // also false
+boolean largerOrEqual = (i1 >= i2); // also false
 boolean smaller = (i1 < i2); // true
-boolean smallerEq = (i1 <= i2); // true
-boolean notEq = (i1 != i2); // true
-boolean eq = (i1 == i2); // false
+boolean smallerOrEqual = (i1 <= i2); // true
+boolean notEqual = (i1 != i2); // true
+boolean equal = (i1 == i2); // false
 // Note that == means compare value, = means assign
 \end{lstlisting}
 
-\noindent There are also operators to work with booleans: and, or, and not.
+\noindent There are also operators to work with booleans: ``and", ``or", and ``not".
 \begin{lstlisting}
 /* And = && */
 boolean t = true, f = false;
-boolean andTT = t && t; // true
-boolean andTF = t && f; // false
-boolean andFT = f && t; // false
-boolean andFF = f && f; // false
+boolean andTrueTrue = t && t; // true
+boolean andTrueFalse = t && f; // false
+boolean andFalseTrue = f && t; // false
+boolean andFalseFalse = f && f; // false
 /* Or = || */
-boolean orTT = t || t; // true
-boolean orTF = t || f; // true
-boolean orFT = f || t; // true
-boolean orFF = f || f; // false
+boolean orTrueTrue = t || t; // true
+boolean orTrueFalse = t || f; // true
+boolean orFalseTrue = f || t; // true
+boolean orFalseFalse = f || f; // false
 /* Not = ! */
-boolean notT = !t; // false
-boolean notF = !f; // true
+boolean notTrue = !t; // false
+boolean notFalse = !f; // true
 
 // We can use multiple operators at once:
 boolean myst = !(true && (true || false)); // false
@@ -213,7 +216,7 @@ Now we need to see what we can do with these String variables. As we covered in 
 $variable.methodname(optional parameters)$
 \end{center}
 
-\noindent Examples of various methods in Java for the String class are:
+\noindent Note: \textbf{we cannot call methods on primitive data types} (see later chapters on classes and methods). Examples of various methods in Java for the String class are:
 \begin{lstlisting}
 String str1 = "I love Java";
 /*String.toUpperCase() and toLowerCase*/

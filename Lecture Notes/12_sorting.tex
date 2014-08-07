@@ -1,5 +1,136 @@
 \newsection{Sorting}
 
+\subsection{Motivation}
+Another problem in Computer Science is sorting data. For binary search in the last chapter, we required that the data be sorted. But how do we sort an arbitrary array? This chapter covers various ways to sort.
+
+\subsection{Bubble Sort}
+Bubble sort is an inefficient, but easy to understand, way of sorting data. Almost all sorting algorithms, in the worst case, take $\approx n \times log(n)$ operations, where $n$ is the length of the array. Bubble sort takes $\approx n^2$ operations. It is never used in production code, but is essential for understanding how to sort data. The pseudocode for the algorithm is:
+\begin{verbatim}
+function BubbleSort(array a):
+     n = a.length;
+     swapped = true;
+     while swapped == true:
+          swapped = false;
+          for i=1 to n-1:
+               if a[i-1] > a[i]
+                    swap(a[i-1], a[i]);
+                    swapped = true;
+\end{verbatim}
+The reasoning is this: start with the first 2 elements. If the first is larger than the second, swap them. Then move onto the 2nd and 3rd items, and swap if necessary, etc. until the last 2 elements. If we did a swap operation at any point, ``swapped" is true, and we keep repeating the outer while loop. We set ``swapped" to false on every iteration of the while loop. The only way ``swapped" can be false is if we do not set it to true, which means that the data is sorted (each ith element is larger than the i-1th element). Therefore, we are done.
+\\ \\
+For example, let's assume we have the array $\{5, 3, 1, 4, -2\}$. Let's see each step of running the bubble sort algorithm:
+\begin{verbatim}
+5 3 1 4 -2 // original
+// enter for loop - a[0] > a[1], so swap:
+3 5 1 4 -2
+// a[1] > a[2], so swap:
+3 1 5 4 -2 // etc:
+3 1 4 5 -2
+3 1 4 -2 5
+
+// completed for loop - swapped = true, so repeat:
+3 1 4 -2 5 // unmodified
+1 3 4 -2 5
+1 3 4 -2 5 // still checking:
+1 3 -2 4 5
+
+// completed for loop - swapped = true, so repeat:
+1 3 -2 4 5 // unmodified
+1 3 -2 4 5
+1 -2 3 4 5
+1 -2 3 4 5
+
+// completed for loop - swapped = true, so repeat:
+1 -2 3 4 5 // unmodified
+-2 1 3 4 5
+-2 1 3 4 5
+-2 1 3 4 5
+
+// completed for loop - swapped = true, so repeat:
+-2 1 3 4 5 // unmodified
+-2 1 3 4 5
+-2 1 3 4 5
+-2 1 3 4 5
+
+// completed for loop - swapped = false, so we are done.
+\end{verbatim}
+We can see why this algorithm can take a long time to sort.
+
+\subsection{Selection Sort}
+Selection Sort is an improvement on Bubble Sort in terms of number of operations done to sort a list. The pseudocode is:
+\begin{verbatim}
+function SelectionSort(array a):
+     for j=0 to n-1:
+          min = j;
+          for i=j+1 to n-1:
+               if a[i] < a[min]:
+                    min = i;
+          if min != j:
+               swap(a[j], a[min]);
+\end{verbatim}
+It is best to see how Selection Sort works with an example. Let's say we had the same array as before: $\{5, 3, 1, 4, -2\}$:
+\begin{verbatim}
+5 3 1 4 -2 // unmodified
+// min = 0, enter 2nd for loop
+// a[1] > a[0], so skip if statement
+// a[2] < a[0], so set min = 2
+// a[3] > a[2], so skip if statement
+// a[4] < a[2], so set min = 4
+// since 4 != 0, swap a[0] with a[4]:
+-2 3 1 4 5
+
+// 2nd iteration:
+// min = 1, enter 2nd for loop
+// a[2] < a[1], so set min = 2
+// a[3] > a[2], so skip if statement
+// a[4] > a[2], so skip if statement
+// since 2 != 1, swap a[1] with a[2]:
+-2 1 3 4 5
+
+// etc.
+\end{verbatim}
+We can see that on each iteration of the outside loop, we select the smallest of the ``remaining" items in the array. Then, if the smallest is not the current value, then we swap. This has many fewer swap operations than Bubble Sort.
+
+\subsection{Insertion Sort}
+Insertion Sort has roughly the same running time as Selection Sort, but is another approach to sorting. The pseudocode is:
+\begin{verbatim}
+function InsertionSort(array a):
+     for i=1 to a.length:
+         j = i;
+         while j > 0 and a[j-1] > a[j]:
+             swap(a[j], a[j-1]);
+             j--;
+\end{verbatim}
+Again, let's use our example of $\{5, 3, 1, 4, -2\}$ as our array:
+\begin{verbatim}
+5 3 1 4 -2 // unmodified
+// begin for loop, i=1, j=1
+// begin while loop:
+// j > 0 and a[0] > a[1]:
+3 5 1 4 -2
+// exit for loop
+
+// 2nd iteration, i=2, j=2
+// begin while loop:
+// j > 0 and a[1] > a[2]:
+3 1 5 4 -2
+1 3 5 4 -2
+
+// 3rd iteration, i=3, j=3
+// begin while loop:
+// j > 0 and a[2] > a[3]:
+1 3 4 5 -2
+
+// 3rd iteration, i=4, j=4
+// begin while loop:
+// j > 0 and a[3] > a[4]:
+1 3 4 -2 5
+1 3 -2 4 5
+1 -2 3 4 5
+-2 1 3 4 5
+\end{verbatim}
+What the algorithm does is: on the first iteration, the first element is sorted (trivially). Next, look at the second element, and swap it left until it is in its ``sorted" position (i.e. now the first 2 elements are sorted). Now, do the same steps for the remaining elements.
+
 \subsection{Written Exercises}
 
 \setcounter{counter}{1}
@@ -15,3 +146,12 @@ Mike & Betsy & Aaron & Steven & Doug & Pat & Elise
 \end{enumerate}
 
 \subsection{Programming Exercises}
+
+\setcounter{counter}{1}
+\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+
+\item Implement Bubble Sort.
+\item Implement Selection Sort.
+\item Implement Insertion Sort.
+
+\end{enumerate}

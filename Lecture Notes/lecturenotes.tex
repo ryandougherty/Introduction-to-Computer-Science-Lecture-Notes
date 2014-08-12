@@ -23,6 +23,7 @@
 \usepackage{llncsdoc}
 %
 
+
 \newcommand\invisiblesection[1]{%
   \refstepcounter{section}%
   \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
@@ -54,6 +55,10 @@
   }
   
 \begin{document}
+
+\setlist[enumerate,1]{label*=\arabic*,font=\bfseries,before=\bfseries}
+\setlist[enumerate,2]{label*=.\arabic*,font=\normalfont,before=\normalfont}
+
 \begin{center}
 
 \textsc{\LARGE Arizona State University}\\[1.5cm]

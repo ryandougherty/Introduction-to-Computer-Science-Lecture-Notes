@@ -5,20 +5,20 @@
 \end{center}
 
 \subsection{Motivation}
-We now know basic data types and how to use them. Now, we will see how to execute conditional code based on values. We will cover if, if-else, and switch statements.
+We now know basic data types and how to use them. Now, we will see how to execute conditional code based on values. We will cover \verb|if|, \verb|if-else|, and \verb|switch| statements.
 
 \subsection{If Statements}
-Suppose we were given a task of printing ``True" only when a value entered by the user was larger than another value. Currently, we do not know of a way to do this. Therefore, we have if statements. They have the form:
+Suppose we were given a task of printing ``True" only when a value entered by the user was larger than another value. Currently, we do not know of a way to do this. Therefore, we have \verb|if| statements. They have the form:
 \begin{center}
 $if(condition) \{ ... \}$
 \end{center}
-where ``..." means other lines of code, and condition is evaluated to a boolean value. The rule for if statements is: if the condition is true, then the code between the braces is executed; if false, then it is not executed. If we have one line of code that will be executed in the if statement, then the braces are optional:
+where ``..." means other lines of code, and condition is evaluated to a \verb|boolean| value. The rule for \verb|if| statements is: if the condition evaluates to \verb|true|, then the code between the braces is executed; if \verb|false|, then it is not executed. If we have one line of code that will be executed in the \verb|if| statement, then the braces are optional:
 \begin{lstlisting}
 int x = 8;
 if (x > 7)
      System.out.print("This one line");
 \end{lstlisting}
-However, the second line after the if statement in the following example will not execute as if it were in the if statement, even though it is indented:
+However, the second line after the \verb|if| statement in the following example will not execute as if it were in the \verb|if| statement, even though it is indented:
 \begin{lstlisting}
 int x = 8;
 if (x > 7)
@@ -41,13 +41,13 @@ if (x > 7) {
      System.out.println("What about this line?");
 }
 \end{lstlisting}
-and therefore, both lines will print if the condition evaluates to true (which it does in this case).
+and therefore, both lines will print if the condition evaluates to \verb|true| (which it does in this case).
 \\ \\
-Now suppose we want to execute some code when the condition is true, and some other code when the condition is false (and only when it is false). Therefore, we need an if-else statement, which is of the form:
+Now suppose we want to execute some code when the condition is \verb|true|, and some other code when the condition is \verb|false| (and only when it is \verb|false|). Therefore, we need an \verb|if-else|statement, which is of the form:
 \begin{center}
 $if(condition) \{...\} else \{...\}$
 \end{center}
-If the condition is false, then the code in the ``else" section will automatically execute, and the code in the ``if" section will not. If the condition is true, then the ``else" section will not execute, and the ``if" section will.
+If the condition is \verb|false|, then the code in the \verb|else| section will automatically execute, and the code in the \verb|if| section will not. If the condition is \verb|true|, then the \verb|else| section will not execute, and the \verb|if| section will.
 \\ \\
 Suppose we have been given a task of printing ``true" if the user's input is greater than or equal to 8, and ``false" otherwise. Our code then will look like:
 \begin{lstlisting}
@@ -59,7 +59,7 @@ if (input >= 8) {
      System.out.print("false");
 }
 \end{lstlisting}
-We can even chain multiple if-else statements together (and even nested ones!):
+We can even chain multiple \verb|if-else| statements together (and even nested ones!):
 \begin{lstlisting}
 Scanner s = new Scanner(System.in);
 int input = s.nextInt();
@@ -81,16 +81,16 @@ if (input >= 8) {
 \end{lstlisting}
 
 \subsection{Switch Statements}
-An alternative to if-else statements are switch statements, because if-else statements can be very complex, and can grow very long. A switch statement structure consists of 1 or more case statements (with an optional default case). The programmer supplies a switch statement with a value:
+An alternative to \verb|if-else| statements are switch statements, because \verb|if-else| statements can be very complex and lengthy. A \verb|switch| statement structure consists of 1 or more \verb|case| statements (with an optional \verb|default| case). The programmer supplies a \verb|switch| statement with a value:
 \begin{lstlisting}
 switch(value) {
      // ...
 }
 \end{lstlisting}
-where \verb|value| is a primitive type or a String. For each of the case statements, \verb|value| is compared to the value supplied in the case statement (see form below). Only if they are equal will the code after the case statement be executed.
+where \verb|value| is a primitive type or a \verb|String| (Note: \verb|String| is only allowed in later versions of Java). For each of the case statements, \verb|value| is compared to the value supplied in the \verb|case| statement (see form below). Only if they are equal will the code after the \verb|case| statement be executed.
 \begin{itemize}
-\item Each case statement is of the form: \verb|case value: /* statements */|. At the end of the code section for a case statement, an optional \verb|break;| statement is allowed. However, not putting this statement at the end of the code section for the case statement will immediately execute the next case statement, regardless of the value.
-\item An optional \verb|default:| case statement at the end of the switch block is allowed, which is executed if the input value is not equal to any other case statement's value.
+\item Each \verb|case| statement is of the form: \verb|case value: /* statements */|. At the end of the code section for a \verb|case| statement, an optional \verb|break;| statement is allowed. However, not putting this statement at the end of the code section for the case statement will immediately execute the next \verb|case| statement, regardless of the value.
+\item An optional \verb|default:| case statement at the end of the \verb|switch| block is allowed, which is executed if the input value is not equal to any other \verb|case| statement's value.
 \end{itemize}
 For example, if we were to print ``1" if the input value is equal to 1, and ``2" if equal to 2, and ignore any other inputs, our code might look like:
 \begin{lstlisting}
@@ -105,7 +105,7 @@ switch(input) {
           break;
 }
 \end{lstlisting}
-Now, if we remove the break statements:
+Now, if we remove the \verb|break| statements:
 \begin{lstlisting}
 Scanner s = new Scanner(System.in);
 int input = s.nextInt();
@@ -116,9 +116,9 @@ switch(input) {
           System.out.print("2");
 }
 \end{lstlisting}
-this code will output ``12" if the input is 1, and ``2" if the input is 2, which is not the behavior we might want. This is because we removed the \verb|break| statements, and so the code flows through until it hits a \verb|break| statement. What a \verb|break| statement does is exit the switch statement altogether.
+this code will output ``12" if the input is 1, and ``2" if the input is 2, which is not the behavior we might want. This is because we removed the \verb|break| statements, and so the code flows through until it hits a \verb|break| statement. What a \verb|break| statement does is exit the \verb|switch| statement altogether.
 \\ \\
-On the other hand, if we want to add the requirement of printing ``other" if we have any other value than 1 or 2, then we use a default statement:
+On the other hand, if we want to add the requirement of printing ``other" if we have any other value than 1 or 2, then we use a \verb|default| statement:
 \begin{lstlisting}
 Scanner s = new Scanner(System.in);
 int input = s.nextInt();
@@ -134,7 +134,7 @@ switch(input) {
           break;
 }
 \end{lstlisting}
-We can see that this code can be constructed in an if-else statement fashion. However, sometimes switch and case statements are easier to understand and read.
+We can see that this code can be constructed in an \verb|if-else| statement fashion. However, sometimes \verb|switch| and \verb|case| statements are easier to understand and read.
 
 \subsection{Written Exercises}
 
@@ -252,8 +252,8 @@ else
 \setcounter{counter}{1}
 \begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
 
-\item Write a program that asks for 3 integers and prints the median value of the 3 integers, using only if statements.
+\item Write a program that asks for 3 integers and prints the median value of the 3 integers, using only \verb|if| statements.
 
-\item Write code that ensures that an int variable called number is an odd integer.
+\item Write code that ensures that an \verb|int| variable called \verb|number| is an odd integer.
 
 \end{enumerate}

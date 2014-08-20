@@ -4,9 +4,9 @@
 Now that we have created instance methods in the last chapter, we want to create class methods, which do not involve any instance state.
 
 \subsection{Static}
-The keyword \verb|static| in Java is meant to mean ``only one of these exists". If I have a static variable in a class (in the same place an instance variable will be), there will only be one copy of that variable, regardless of how many instances there are of that class.
+The keyword \verb|static| in Java is meant to mean ``only one of these exists". If I have a \verb|static| variable in a class (in the same place an instance variable will be), there will only be one copy of that variable, regardless of how many instances there are of that class.
 \\ \\
-For example, let's say we have a class called ``B" that has a \verb|static| field called ``numInstances" of type \verb|int| which is incremented every time the constructor is called. We would design the code like this:
+For example, let's say we have a class called \verb|B| that has a \verb|static| field called \verb|numInstances| of type \verb|int| which is incremented every time the constructor is called. We would design the code like this:
 \begin{lstlisting}
 public class B {
      private static int numInstances = 0; // start with a value
@@ -21,9 +21,9 @@ public class B {
 If we call this from main:
 \begin{lstlisting}
 B b1 = new B();
-System.out.println(b1.getNumInstances()); // 1
+System.out.println(b1.getNumInstances()); // prints 1
 B b2 = new B();
-System.out.println(b2.getNumInstances()); // 2
+System.out.println(b2.getNumInstances()); // prints 2
 \end{lstlisting}
 Now if we change the code to not have the instance variable be static, then we have:
 \begin{lstlisting}
@@ -40,9 +40,9 @@ public class B {
 And the outputs are:
 \begin{lstlisting}
 B b1 = new B();
-System.out.println(b1.getNumInstances()); // 1
+System.out.println(b1.getNumInstances()); // prints 1
 B b2 = new B();
-System.out.println(b2.getNumInstances()); // 1
+System.out.println(b2.getNumInstances()); // prints 1
 \end{lstlisting}
 which is not the behavior that we want.
 \\ \\
@@ -71,7 +71,7 @@ public class Math {
 
 \item What is a static variable? What is a static method?
 
-\item Using the code below, how many copies of the variable number exist after instantiating 374 different AmazingClass objects?
+\item Using the code below, how many copies of the variable \verb|number| exist after instantiating 374 different \verb|AmazingClass| objects?
 \begin{lstlisting}
 public class AmazingClass {
      private static int number;
@@ -85,7 +85,7 @@ public class AmazingClass {
 }
 \end{lstlisting}
 
-\item Using the code from above, what is the value of number after each of the following statements? (For each part, assume the preceding parts have already been executed).
+\item Using the code from above, what is the value of \verb|number| after each of the following statements? (For each line below, assume the preceding ones have already been executed).
 \begin{lstlisting}
 AmazingClass ac1 = new AmazingClass(3);
 AmazingClass ac2 = new AmazingClass(7);

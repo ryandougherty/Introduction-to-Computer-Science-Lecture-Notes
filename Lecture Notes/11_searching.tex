@@ -1,7 +1,7 @@
 \newsection{Searching}
 
 \subsection{Motivation}
-Now that we know how to make arrays, we want to use them efficiently. We will cover 2 basic searching algorithms that will find elements in an array quickly and efficiently: linear and binary searching.
+Now that we know how to make arrays, we want to use them efficiently. This chapter and the next will be a more ``high-level" approach to problems in programming and Computer Science. Searching is a well-studied and important problem. We will cover 2 basic searching algorithms that will find elements in an array quickly and efficiently: linear and binary searching.
 
 \subsection{Linear Search}
 Linear Search is searching from one end of the array until the end, and stopping if we find the element that we desire. Pseudocode to match a linear search is:
@@ -14,10 +14,9 @@ function LinearSearch(array a, variable v):
 \end{verbatim}
 For example, if we have an array of \verb|int| variables and we are searching for one, we can construct code such as this:
 \begin{lstlisting}
-public boolean linearSearch(int[] array, 
-     int toSearchFor) {
+public boolean linearSearch(int[] array, int search) {
      for (int i : array) {
-          if (i == toSearchFor) {
+          if (i == search) {
                return true;
           }
      }
@@ -102,6 +101,6 @@ Aaron & Betsy & Doug & Elise & Mike & Pat & Steven
 \begin{lstlisting}
 int mid = (min+max)/2;
 \end{lstlisting}
-in the code for binary search above has a bug, but is very specific. It works in the vast majority of cases, though. Figure out what is the bug, and what can be done to fix it (hint: think about the bounds on the values for \verb|int|).
+in the code for binary search above has a bug, but is very specific. It works in the vast majority of cases, though. Figure out what the bug is, and what can be done to fix it (hint: think about the bounds on the values for \verb|int|).
 
 \end{enumerate}

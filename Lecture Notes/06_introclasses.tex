@@ -32,7 +32,7 @@ In order to make an instance of the class, we need to create a ``constructor" fo
 \item Any number of constructors allowed as long as they differ in signature (number of arguments or different types of arguments).
 \item The default constructor--with no arguments--is provided by Java if none is provided by the programmer.
 \end{itemize}
-For example, let's modify our BankAccount class that has the name of the person with the account, and a starting balance:
+For example, let's modify our \verb|BankAccount| class that has the name of the person with the account, and a starting balance. When we initialize our \verb|BankAccount| object in the main method, we will use the \verb|new| operator, which passes in the values supplied to \verb|name| and \verb|startAmount| below:
 \begin{lstlisting}
 public class BankAccount {
      // visibility of public - need to see outside of class	
@@ -48,8 +48,7 @@ public class BankAccount {
      public double balance;
      
      // visibility of public - need to see outside of class	
-     public BankAccount(String name, 
-          double startAmount) {
+     public BankAccount(String name, double startAmount) {
           personName = name; // set name
           balance = startAmount; // set amount
           // optional: use this operator
@@ -66,7 +65,7 @@ public class BankAccountTest {
      }
 }
 \end{lstlisting}
-Since we have declared our instance variables as \verb|public|, we can modify the corresponding values of our instance to anything we want:
+Since we have declared our instance variables as \verb|public|, we can modify the corresponding values of our instance to anything we want by using the ``dot" operator, in the same way we use \verb|Math.PI| on the \verb|Math| class:
 \begin{lstlisting}
 public class BankAccountTest {
      public static void main(String[] args) {
@@ -89,7 +88,7 @@ public class BankAccount {
      }
 }
 \end{lstlisting}
-This is a good start, but we want to be able to deposit or withdraw some amount into balance. Therefore, we need to use ``setters" (also called ``mutators") and ``getters" (also called ``accessors"):
+This is a good start, but we want to be able to deposit or withdraw some amount into balance. Therefore, we need to use ``setters" (also called ``mutators") and ``getters" (also called ``accessors"). Setters are about changing some internal value to a passed-in value, and getters are about getting internal values back to the user:
 \begin{lstlisting}
 public class BankAccount {
      private String personName;
@@ -126,7 +125,7 @@ public class BankAccount {
      }
 }
 \end{lstlisting}
-But this introduces the same problem as earlier - we can make our balance be any value we want. Therefore, we should get rid of the setter, and introduce a deposit method, which adds to the balance with the input. We can leave the getter because it does not modify the value of balance.
+But this introduces the same problem as earlier - we can make our balance be any value we want. Therefore, we should get rid of the setter, and introduce a \verb|deposit| method, which adds to the balance with the input. We can leave the getter because it does not modify the value of \verb|balance|.
 \begin{lstlisting}
 public class BankAccount {
      private String personName;
@@ -159,9 +158,9 @@ public class BankAccountTest {
 }
 \end{lstlisting}
 
-Notes about classes:
+\noindent Notes about classes:
 \begin{itemize}
-\item A method (terminology to be covered in the next chapter) called toString, which returns a String, is commonly implemented among programmer-created classes. The returned String is a textual description of the state of the class and instance variables. For instance, we could use our BankAccount class and create a toString method that returns:
+\item A method (terminology to be covered in the next chapter) called \verb|toString|, which returns a \verb|String|, is commonly implemented among programmer-created classes. The returned \verb|String| is a textual description of the state of the class and instance variables. For instance, we could use our \verb|BankAccount| class and create a \verb|toString| method that returns:
 \begin{verbatim}
 Name: Jane
 Balance: 50.0

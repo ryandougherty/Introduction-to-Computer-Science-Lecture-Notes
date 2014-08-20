@@ -19,7 +19,55 @@ Let's say that this method is in a class called ``A". Therefore, to call the met
 A a = new A(); // or some other constructor
 a.test("Hello");
 \end{lstlisting}
-We say that we ``call" the method ``test" on the object ``a" of type ``A".
+We say that we ``call" the method ``test" on the object ``a" of type ``A". We will get a compilation error if instead of \verb|public|, we make the visibility modifier be \verb|private|. Also, a method can only have one return type, or \verb|void|, which means ``not returning a value," but is nevertheless a return type (just not a value). However, if we put \verb|void| as our return type, we can have a \verb|return| statement to immediately exit from the method:
+\begin{lstlisting}
+public void someMethod() {
+     for (int i=0; i < 100; i++) {
+          if (i == 57) {
+               return; // will immediately stop execution of method
+               // return 5; // compilation error, since we have void
+          }
+     }
+}
+\end{lstlisting}
+
+\subsection{Methods Returning Values}
+Methods can ``return" types, with the \verb|return| keyword. For example, if we want to implement a method that takes in 2 \verb|int| parameters and returns their product, we can do this:
+\begin{lstlisting}
+public int multiply(int num1, int num2) {
+	return num1 * num2; // return this value
+}
+\end{lstlisting}
+We can use this method, say in a class called \verb|C|, to call the method and use the value that is returned:
+\begin{lstlisting}
+C c = new C();
+int result = c.multiply(3, 4); // result is 12
+\end{lstlisting}
+Since we specified \verb|int| as the return type of \verb|multiply|, we must return a \verb|int| at some point in the method. We will have a compilation error if we don't return a type when we say there will be, or returning an incorrect type.
+\\ \\
+Also, we must have a \verb|return| statement at all points that are reachable within the program (or combine them). For example, here is a method that will cause a compilation error:
+\begin{lstlisting}
+public int multiply(int num1, int num2) {
+     if (num1 > 0) {
+          System.out.print("num1 > 0");
+          // compiler error here because no return value
+     } else {
+          return num1 * num2; // return this value
+     }
+}
+\end{lstlisting}
+We can see that if \verb|num1 > 0|, then we print that statement out, do not execute the \verb|else| clause, and continue. Since we can have a way through the method without returning, it causes a compilation error. We can mitigate this by adding a \verb|return| statement either inside the \verb|if| statement or at the end of the method (the ``catch-all" case):
+\begin{lstlisting}
+public int multiply(int num1, int num2) {
+     if (num1 > 0) {
+          System.out.print("num1 > 0");
+          return 0; // fixed compilation error
+     } else {
+          return num1 * num2; // return this value
+     }
+     // can also put here: return 0;
+}
+\end{lstlisting}
 
 \subsection{Written Exercises}
 
@@ -126,8 +174,8 @@ public class RunCDPlayer {
 \setcounter{counter}{1}
 \begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
 
-\item Write a boolean method called allDifferent that takes 3 int numbers and returns true if the numbers are all different, and false otherwise.
+\item Write a \verb|boolean| method called \verb|allDifferent| that takes 3 \verb|int| numbers and returns \verb|true| if they are all different, and \verb|false| otherwise.
 
-\item Write a boolean method called isPrime that takes in an int number, and returns true if the number is prime, and false otherwise.
+\item Write a \verb|boolean| method called \verb|isPrime| that takes in an \verb|int| number and returns \verb|true| if it is \verb|prime|, and \verb|false| otherwise.
 
 \end{enumerate}

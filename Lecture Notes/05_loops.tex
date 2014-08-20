@@ -1,10 +1,10 @@
 \newsection{Loops}
 
 \subsection{Motivation}
-Now we know how to execute conditional code. This chapter will greatly increase our powers in what we can do with programming, by being able to execute code many times without having to re-write (or copy and paste) code over and over.
+With the last chapter, we now know how to execute conditional code. This chapter will greatly increase our powers in what we can do with programming, by being able to execute code many times without having to re-write (or copy and paste) code over and over.
 
 \subsection{Introduction to Loops}
-Loops are a way of executing some code an arbitrary number of times. What determines the number of times a loop executes is based largely on a condition, just like if and switch statements were. There are three kinds of loops in Java:
+Loops are a way of executing some code an arbitrary number of times. What determines the number of times a loop executes is based largely on a condition, just like \verb|if| and \verb|switch| statements were. There are 3 kinds of loops in Java:
 \begin{itemize}
 \item \verb|while| loops
 \item \verb|do|-\verb|while| loops
@@ -12,11 +12,11 @@ Loops are a way of executing some code an arbitrary number of times. What determ
 \end{itemize}
 
 \subsection{While loops}
-While loops are the simplest to understand kind of loop. The structure of a while loop is:
+\verb|while| loops are the simplest to understand kind of loop. The structure of one is:
 \begin{center}
 $while(condition) \{...\}$
 \end{center}
-The semantics are: the loop will continue as long as the condition evaluates to true. The main reason while loops are used is that we may not know the number of times a loop will occur. If we do, we usually use a \verb|for| loop (see below). However, both while and for loops can be converted back and forth.
+The semantics are: the loop will continue as long as the condition evaluates to \verb|true|. The main reason \verb|while| loops are used is that we may not know the number of times looping occurs. If we do, we usually use a \verb|for| loop (see below). However, both \verb|while| and \verb|for| loops can be converted back and forth.
 \\ \\
 For example, let's say we are given a task of displaying a positive integer that the user enters, and continue doing so until the user enters 0. Setting up is easy:
 \begin{lstlisting}
@@ -34,7 +34,7 @@ while(/* something */) {
 	// somehow take user input and display it
 }
 \end{lstlisting}
-Now, we need to create the condition for the while loop. We stop after the user enters 0, so let's make that condition (and display it):
+Now, we need to create the condition for the \verb|while| loop. We stop after the user enters 0, so let's make that condition (and display it):
 \begin{lstlisting}
 Scanner s = new Scanner(System.in);
 System.out.println("Enter an integer:");
@@ -44,7 +44,7 @@ while(input != 0) {
 	// anything else go here?
 }
 \end{lstlisting}
-This code seems good, but unfortunately we can encounter what is called an ``infinite loop", which does not stop looping. If we enter a non-zero integer, then we print that output. Then since there is nothing else to do in the loop body, we check the condition again, which evaluates to true, prints out, loops back, prints out, etc. We need to get the user input again at the end of the loop:
+This code seems good, but unfortunately we can encounter what is called an ``infinite loop", which does not stop looping. If we enter a non-zero integer, then we print that output. Then since there is nothing else to do in the loop body, we check the condition again, which evaluates to \verb|true|, prints out, loops back, prints out, etc. We need to get the user input again at the end of the loop:
 \begin{lstlisting}
 Scanner s = new Scanner(System.in);
 System.out.println("Enter an integer:");
@@ -58,13 +58,13 @@ while(input != 0) {
 Now our solution code for the example is correct.
 
 \subsection{Do-While loops}
-Do-While loops are the same as while loops, but guarantee that the loop body will be executed at least once. Remember our earlier while loop example: if we initially entered 0, then the loop's condition evaluates to false, and does not execute the body. Therefore, it loops 0 times. 
+\verb|do-while| loops are the same as \verb|while| loops, but guarantee that the loop body will be executed at least once. Remember our earlier \verb|while| loop example: if we initially entered 0, then the loop's condition evaluates to \verb|false|, and does not execute the body. Therefore, it loops 0 times. 
 \\ \\
 The structure of a do-while loop is:
 \begin{center}
 $do \{ ... \} while(condition);$
 \end{center}
-Note: the semicolon after the last parentheses of the while's condition is necessary. For example, if we modify our example from above to be a do-while loop, we guarantee that the user must enter at least one integer:
+Note: the semicolon after the last parentheses of the \verb|while|'s condition is necessary. For example, if we modify our example from above to be a \verb|do-while| loop, we guarantee that the user must enter at least one integer:
 \begin{lstlisting}
 Scanner s = new Scanner(System.in);
 System.out.println("Enter an integer:");
@@ -77,7 +77,7 @@ do {
 \end{lstlisting}
 
 \subsection{For loops}
-For loops are when we know precisely how many times the for loop will execute. However, they are equivalent to while loops (i.e. one can construct a for loop from a while loop, and vice versa). All for loops have the same structure:
+\verb|for| loops are used when we know precisely how many times the loop will execute. However, they are equivalent in functionality to \verb|while| loops (i.e. one can construct a \verb|for| loop from a \verb|while| loop, and vice versa). All \verb|for| loops have the same structure:
 \begin{center}
 $for(initialization; condition; modification) \{...\}$
 \end{center}
@@ -94,19 +94,19 @@ int sum = 0;
 // put some kind of for loop here
 System.out.println(sum);
 \end{lstlisting}
-Now we need to reason how to construct our for loop. Let's initialize a loop control variable, called ``i", to be 1. Then, for each iteration of the loop, add i to sum, and at each iteration, add 1 to i. An ``unraveling" of the loop's logic will be this:
+Now we need to reason how to construct our \verb|for| loop. Let's initialize a loop control variable, called \verb|i|, to be 1. Then, for each iteration of the loop, add \verb|i| to \verb|sum|, and at each iteration, add 1 to \verb|i|. An ``unraveling" of the loop's logic will be this:
 \begin{itemize}
 \item sum = 0.
-\item 1st iteration of loop: i = 1, add to sum, sum = 1, add 1 to i (i = 2).
-\item 2nd iteration of loop: i = 2, add to sum, sum = 3, add 1 to i (i = 3).
-\item 3rd iteration of loop: i = 3, add to sum, sum = 6, add 1 to i (i = 3).
+\item 1st iteration of loop: \verb|i| = 1, add to \verb|sum|, \verb|sum| = 1, add 1 to \verb|i| (\verb|i| = 2).
+\item 2nd iteration of loop: \verb|i| = 2, add to \verb|sum|, \verb|sum| = 3, add 1 to \verb|i| (\verb|i| = 3).
+\item 3rd iteration of loop: \verb|i| = 3, add to \verb|sum|, \verb|sum| = 6, add 1 to \verb|i| (\verb|i| = 4).
 \end{itemize}
-and so on. By this logic, we want the loop to stop at n, inclusive. So, we need to have a condition of \verb|i <= n|. And on each loop, we execute \verb|i++|. Therefore, our final code will be:
+and so on. By this logic, we want the loop to stop at \verb|n|, inclusive. So, we need to have a condition of \verb|i <= n|. And on each loop, we execute \verb|i++|. Therefore, our final code will be:
 \begin{lstlisting}
 Scanner s = new Scanner(System.in);
 int n = s.nextInt();
 int sum = 0;
-for(int i=0; i<=n; i++) {
+for(int i=1; i<=n; i++) {
 	sum += i; // add to sum
 }
 System.out.println(sum);
@@ -191,8 +191,8 @@ System.out.print(n);
 \setcounter{counter}{1}
 \begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
 
-\item Write a loop that reads in int values until the user enters 0 and prints out how many values entered are greater than 10.
+\item Write a loop that reads in \verb|int| values until the user enters 0 and prints out how many values entered are greater than 10.
 
-\item Write a loop that will print out every other letter in a String str. For example, if the String was ``Hello There", then ``HloTee" will be printed.
+\item Write a loop that will print out every other letter in a \verb|String| variable called \verb|str|. For example, if the \verb|String| was ``Hello There", then ``HloTee" will be printed.
 
 \end{enumerate}

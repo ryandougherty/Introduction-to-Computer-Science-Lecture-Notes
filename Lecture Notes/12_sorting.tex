@@ -1,7 +1,7 @@
 \newsection{Sorting}
 
 \subsection{Motivation}
-Another problem in Computer Science is sorting data. For binary search in the last chapter, we required that the data be sorted. But how do we sort an arbitrary array? This chapter covers various ways to sort.
+Another problem in Computer Science is sorting data. For binary search in the last chapter, we required that the data be sorted. But how do we sort an arbitrary array? This chapter covers various ways to sort. One thing to keep in mind is this: \textbf{all array types can be sorted}.
 
 \subsection{Bubble Sort}
 Bubble sort is an inefficient, but easy to understand, way of sorting data. Almost all sorting algorithms, in the worst case, take $\approx n \times log(n)$ operations, where $n$ is the length of the array. Bubble sort takes $\approx n^2$ operations. It is never used in production code, but is essential for understanding how to sort data. The pseudocode for the algorithm is:
@@ -16,7 +16,7 @@ function BubbleSort(array a):
                     swap(a[i-1], a[i]);
                     swapped = true;
 \end{verbatim}
-The reasoning is this: start with the first 2 elements. If the first is larger than the second, swap them. Then move onto the 2nd and 3rd items, and swap if necessary, etc. until the last 2 elements. If we did a swap operation at any point, ``swapped" is true, and we keep repeating the outer while loop. We set ``swapped" to false on every iteration of the while loop. The only way ``swapped" can be false is if we do not set it to true, which means that the data is sorted (each ith element is larger than the i-1th element). Therefore, we are done.
+The reasoning is this: start with the first 2 elements. If the first is larger than the second, swap them. Then move onto the 2nd and 3rd items, and swap if necessary, etc. until the last 2 elements. If we did a swap operation at any point, \verb|swapped| is \verb|true|, and we keep repeating the outer \verb|while| loop. We set \verb|swapped| to \verb|false| on every iteration of the \verb|while| loop. The only way \verb|swapped| can be \verb|false| is if we do not set it to \verb|true|, which means that the data is sorted (each ith element is larger than the i-1th element). Therefore, we are done.
 \\ \\
 For example, let's assume we have the array $\{5, 3, 1, 4, -2\}$. Let's see each step of running the bubble sort algorithm:
 \begin{verbatim}
@@ -136,7 +136,7 @@ What the algorithm does is: on the first iteration, the first element is sorted 
 \setcounter{counter}{1}
 \begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
 
-\item Write the contents after each step of selection sort and insertion sort (assume by alphabetical order).
+\item Write the contents of the following array after each step of the Selection Sort and Insertion Sort algorithms (assume the sorting is done in alphabetical order).
 \begin{table}
 \begin{tabular}{l l l l l l l}
 Mike & Betsy & Aaron & Steven & Doug & Pat & Elise

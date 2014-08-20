@@ -13,10 +13,10 @@ There are 8 ``primitive" (fundamental) data types in Java (we will explain const
 \item \verb|float| - a ``real" value, that has some precision.
 \item \verb|double| - same as \verb|float| but with more precision.
 \item \verb|boolean| - a type that takes one of two possible values: \verb|true|, or \verb|false|.
-\item \verb|char| - a Unicode character. Think of \verb|a| or \verb|b| as \verb|char|s.
+\item \verb|char| - a Unicode character. Think of \verb|a| or \verb|b| as \verb|char|s - any single character is a \verb|char|.
 \end{itemize}
 
-\noindent Now, we give the range for each of the primitive data types (all inclusive on both ends):
+\noindent Now, we give the range for each of the primitive data types (all inclusive on both ends). These are all of the values that they can hold:
 \begin{itemize}
 \item \verb|byte|: -128 to +127.
 \item \verb|short|: -32768 to +32767.
@@ -33,13 +33,13 @@ There are 8 ``primitive" (fundamental) data types in Java (we will explain const
 \subsection{Variable Declaration}
 Like classes in the previous chapter, declaring variables follow the same basic structure, which is:
 \begin{center}
-$Type$ $VariableName = $ $Value;$
+$<Type>$ $<VariableName> = $ $<Value>;$
 \end{center}
 
 \noindent For example, if we want a \verb|int| variable called \verb|val| to have a value of 2, we would write the line of code as:
 
 \begin{lstlisting}
-int val = 2;
+int val = 2; // assign val to a value of 2
 \end{lstlisting}
 
 \noindent Also, we can declare several variables of the same type in the same line using a comma between the names:
@@ -191,9 +191,9 @@ final int NUM = 100; // convention: all capital letters for final variables
 \end{lstlisting}
 
 \subsection{String}
-Now that we fully understand how primitive data types work, we can move on to using classes provided by the Java API (Application Programmer Interface). One such class is provided in the Java package \verb|java.lang|, called String. This package is so often that Java automatically imports it for you, so you do not have to do extra work.
+Now that we fully understand how primitive data types work, we can move on to using classes provided by the Java API (Application Programmer Interface). One such class is provided in the Java package \verb|java.lang|, called \verb|String|. This package is so often that Java automatically imports it for you, so the programmer does not have to do extra work.
 \\ \\
-A String is a set of characters in between double quotes. Any character can be inside a string, except for a double quote. Examples are:
+A \verb|String| is a set of characters in between double quotes. Any character can be inside a string, except for a double quote. Examples are:
 \begin{lstlisting}
 String str1 = "I love";
 String str2 = "Java";
@@ -203,20 +203,20 @@ int i1 = 3;
 str3 = str1 + i1; // has value "I love3"
 \end{lstlisting}
 
-\noindent However, there is another way to declare a String variable, and that is done using the Java keyword \verb|new|:
+\noindent However, there is another way to declare a \verb|String| variable, and that is done using the Java keyword \verb|new|:
 \begin{lstlisting}
 String str1 = new String("I love"); // same as above
 \end{lstlisting}
 
-\noindent String is the only Java class that can declare (also called ``instantiate") a variable without the \verb|new| keyword. All other Java classes must be instantiated with this keyword.
+\noindent \verb|String| is the only Java class that can declare (also called ``instantiate") a variable without the \verb|new| keyword. All other Java classes must be instantiated with this keyword.
 \\ \\
-Now we need to see what we can do with these String variables. As we covered in the last chapter, every Java class has one or more methods. The syntax for calling a method is:
+Now we need to see what we can do with these \verb|String| variables. As we covered in the last chapter, every Java class has one or more methods. The syntax for calling a method is:
 
 \begin{center}
 $variable.methodname(optional parameters)$
 \end{center}
 
-\noindent Note: \textbf{we cannot call methods on primitive data types} (see later chapters on classes and methods). Examples of various methods in Java for the String class are:
+\noindent Note: \textbf{we cannot call methods on primitive data types} (see later chapters on classes and methods). Examples of various methods in Java for the \verb|String| class are:
 \begin{lstlisting}
 String str1 = "I love Java";
 /*String.toUpperCase() and toLowerCase*/
@@ -266,7 +266,7 @@ int c4 = "B".compareTo("A"); // positive
 \end{lstlisting}
 
 \subsection{Scanner}
-Now that we know how to modify String variables, it is important to know how to get input from the user so that we can make our programs usable. For that, we use the Scanner class in the \verb|java.util| package.
+Now that we know how to create and modify modify \verb|String| variables, it is important to know how to get input from the user so that we can make our programs usable. For that, we use the \verb|Scanner| class in the \verb|java.util| package.
 \\ \\
 However, since this class is not in the package \verb|java.lang|, we must $import$ it from the Java library, by putting an import statement at the beginning of our file:
 \begin{lstlisting}
@@ -401,7 +401,7 @@ String str2 = s.nextLine(); // this is the entire line of characters before pres
 %\end{lstlisting}
 
 \subsection{Math}
-There is another class, called Math (in the \verb|java.lang| package) that provides some useful functionalities:
+There is another class, called \verb|Math| (in the \verb|java.lang| package) that provides some useful functionalities:
 \begin{lstlisting}
 /* Square root */
 double num1 = 105.0;
@@ -468,7 +468,7 @@ public class Example {
 \end{lstlisting}
 
 
-\item Which of the following correctly invokes the method length() of the String str and stores the result in val of type int?
+\item Which of the following correctly invokes the method \verb|length()| of the \verb|String| variable \verb|str| and stores the result in \verb|val| of type \verb|int|?
 \begin{lstlisting}
 int val = str.length();
 int val = length.str();
@@ -484,7 +484,7 @@ System.out.println(s.charAt(0)+t.substring(3, 4));
 System.out.println(t.substring(7));
 \end{lstlisting}
 
-\item Evaluate each of the following expressions, assuming j is an int with value 11, k is an int with value 3, and s is a String with value ``Ford Rivers".
+\item Evaluate each of the following expressions, assuming \verb|j| is an \verb|int| with value 11, \verb|k| is an \verb|int| with value 3, and \verb|s| is a \verb|String| with value ``Ford Rivers".
 \begin{lstlisting}
 j / k
 j % k
@@ -493,7 +493,7 @@ s.length()
 s.charAt(3)
 \end{lstlisting}
 
-\item True or False? The type String is a primitive data type.
+\item True or False? The type \verb|String| is a primitive data type.
 
 \item True or False? The type \verb|char| is a primitive data type.
 
@@ -531,7 +531,7 @@ public class Question {
 }
 \end{lstlisting}
 
-\item What value is contained in the \verb|int| variable length after the following statements are executed?
+\item What value is contained in the \verb|int| variable \verb|length| after the following statements are executed?
 \begin{lstlisting}
 length = 2;
 length *= 9;

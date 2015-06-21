@@ -42,14 +42,14 @@ if (x > 7) {
 }
 \end{lstlisting}
 and therefore, both lines will print if the condition evaluates to \verb|true| (which it does in this case).
-\\ \\
-Now suppose we want to execute some code when the condition is \verb|true|, and some other code when the condition is \verb|false| (and only when it is \verb|false|). Therefore, we need an \verb|if-else|statement, which is of the form:
+
+\par Now suppose we want to execute some code when the condition is \verb|true|, and some other code when the condition is \verb|false| (and only when it is \verb|false|). Therefore, we need an \verb|if-else|statement, which is of the form:
 \begin{center}
 $if(condition) \{...\} else \{...\}$
 \end{center}
 If the condition is \verb|false|, then the code in the \verb|else| section will automatically execute, and the code in the \verb|if| section will not. If the condition is \verb|true|, then the \verb|else| section will not execute, and the \verb|if| section will.
-\\ \\
-Suppose we have been given a task of printing ``true" if the user's input is greater than or equal to 8, and ``false" otherwise. Our code then will look like:
+
+\par Suppose we have been given a task of printing ``true" if the user's input is greater than or equal to 8, and ``false" otherwise. Our code then will look like:
 \begin{lstlisting}
 Scanner s = new Scanner(System.in);
 int input = s.nextInt();
@@ -117,8 +117,8 @@ switch(input) {
 }
 \end{lstlisting}
 this code will output ``12" if the input is 1, and ``2" if the input is 2, which is not the behavior we might want. This is because we removed the \verb|break| statements, and so the code flows through until it hits a \verb|break| statement. What a \verb|break| statement does is exit the \verb|switch| statement altogether.
-\\ \\
-On the other hand, if we want to add the requirement of printing ``other" if we have any other value than 1 or 2, then we use a \verb|default| statement:
+
+\par On the other hand, if we want to add the requirement of printing ``other" if we have any other value than 1 or 2, then we use a \verb|default| statement:
 \begin{lstlisting}
 Scanner s = new Scanner(System.in);
 int input = s.nextInt();
@@ -138,8 +138,7 @@ We can see that this code can be constructed in an \verb|if-else| statement fash
 
 \subsection{Written Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+\begin{enumerate}
 
 \item What is the output of the following code?
 \begin{lstlisting}
@@ -249,8 +248,7 @@ else
 
 \subsection{Programming Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+\begin{enumerate}
 
 \item Write a program that asks for 3 integers and prints the median value of the 3 integers, using only \verb|if| statements.
 

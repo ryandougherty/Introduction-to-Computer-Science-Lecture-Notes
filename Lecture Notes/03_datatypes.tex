@@ -6,8 +6,8 @@ Now that we know how to compile and run programs, and print to the screen, we wi
 \subsection{Types}
 There are 8 ``primitive" (fundamental) data types in Java (we will explain constraints that they have later):
 \begin{itemize}
-\item \verb|byte| - an integer with a small range.
-\item \verb|short| - same as \verb|byte|, but a larger range.
+\item \texttt{byte} - an integer with a small range.
+\item \texttt{short} - same as \texttt{byte}, but a larger range.
 \item \verb|int| - same as \verb|short|, but even larger range.
 \item \verb|long| - same as \verb|int|, but even still larger range.
 \item \verb|float| - a ``real" value, that has some precision.
@@ -27,16 +27,14 @@ There are 8 ``primitive" (fundamental) data types in Java (we will explain const
 \item \verb|boolean|: \verb|true| or \verb|false|.
 \item \verb|char|: 0 to 65535.
 \end{itemize}
-
-\noindent Now that we know the 8 fundamental data types, we want to know how to use them. To do that, we have to $declare$ a $variable$ with a type.
+Now that we know the 8 fundamental data types, we want to know how to use them. To do that, we have to $declare$ a $variable$ with a type.
 
 \subsection{Variable Declaration}
 Like classes in the previous chapter, declaring variables follow the same basic structure, which is:
 \begin{center}
 $<Type>$ $<VariableName> = $ $<Value>;$
 \end{center}
-
-\noindent For example, if we want a \verb|int| variable called \verb|val| to have a value of 2, we would write the line of code as:
+For example, if we want a \verb|int| variable called \verb|val| to have a value of 2, we would write the line of code as:
 
 \begin{lstlisting}
 int val = 2; // assign val to a value of 2
@@ -80,8 +78,7 @@ i = 301; // modifies i's value to be 301
 \end{lstlisting}
 
 \subsection{Primitive Operators}
-
-\noindent Now that we know how to declare and modify values, we need to learn how to do various operations on them, such as addition, subtraction, multiplication, and division. An example showing all of them is the following (with comments):
+Now that we know how to declare and modify values, we need to learn how to do various operations on them, such as addition, subtraction, multiplication, and division. An example showing all of them is the following (with comments):
 \begin{lstlisting}
 /* Addition */
 // int works the same as byte and short
@@ -127,13 +124,13 @@ double d8 = (double)i9 / i10; // cast i9 to a double of value 10.0
 // d8 now has value 3.333333...
 \end{lstlisting}
 
-\noindent Another operation is called the mod operator (or ``remainder"):
+Another operation is called the mod operator (or ``remainder"):
 \begin{lstlisting}
 int i1 = 10, i2 = 3;
 int i3 = i1 % i2; // i3 has value 1, since 10 remainder 3 = 1.
 \end{lstlisting}
 
-\noindent We can also ``shorten" times when we are modifying the same value with another. For example:
+We can also ``shorten" times when we are modifying the same value with another. For example:
 \begin{lstlisting}
 int i = 5;
 i += 3; // equivalent to: i = i + 3;
@@ -142,7 +139,7 @@ i *= 3; // equivalent to: i = i * 3;
 i /= 3; // equivalent to: i = i / 3;
 \end{lstlisting}
 
-\noindent For \verb|int| variables, there are 2 operations that are done very often, so they were put into the language: increment and decrement:
+For \verb|int| variables, there are 2 operations that are done very often, so they were put into the language: increment and decrement:
 \begin{lstlisting}
 int i = 2;
 i++; // equivalent to: i += 1;
@@ -151,7 +148,7 @@ i--; // equivalent to: i -= 1;
 
 \subsection{Boolean}
 
-\noindent So how do we compare values? There are various operators (parentheses added for clarity - they are not needed):
+So how do we compare values? There are various operators (parentheses added for clarity - they are not needed):
 \begin{lstlisting}
 int i1 = 5, i2 = 6;
 boolean larger = (i1 > i2); // false, since 5 < 6
@@ -163,7 +160,7 @@ boolean equal = (i1 == i2); // false
 // Note that == means compare value, = means assign
 \end{lstlisting}
 
-\noindent There are also operators to work with booleans: ``and", ``or", and ``not".
+There are also operators to work with booleans: ``and", ``or", and ``not".
 \begin{lstlisting}
 /* And = && */
 boolean t = true, f = false;
@@ -184,7 +181,7 @@ boolean notFalse = !f; // true
 boolean myst = !(true && (true || false)); // false
 \end{lstlisting}
 
-\noindent What if we do not want our variable values to change? There is a way, with the \verb|final| keyword:
+What if we do not want our variable values to change? There is a way, with the \verb|final| keyword:
 \begin{lstlisting}
 final int NUM = 100; // convention: all capital letters for final variables
 // NUM++; // compilation error
@@ -192,8 +189,8 @@ final int NUM = 100; // convention: all capital letters for final variables
 
 \subsection{String}
 Now that we fully understand how primitive data types work, we can move on to using classes provided by the Java API (Application Programmer Interface). One such class is provided in the Java package \verb|java.lang|, called \verb|String|. This package is so often that Java automatically imports it for you, so the programmer does not have to do extra work.
-\\ \\
-A \verb|String| is a set of characters in between double quotes. Any character can be inside a string, except for a double quote. Examples are:
+
+\par A \verb|String| is a set of characters in between double quotes. Any character can be inside a string, except for a double quote. Examples are:
 \begin{lstlisting}
 String str1 = "I love";
 String str2 = "Java";
@@ -208,15 +205,15 @@ str3 = str1 + i1; // has value "I love3"
 String str1 = new String("I love"); // same as above
 \end{lstlisting}
 
-\noindent \verb|String| is the only Java class that can declare (also called ``instantiate") a variable without the \verb|new| keyword. All other Java classes must be instantiated with this keyword.
-\\ \\
-Now we need to see what we can do with these \verb|String| variables. As we covered in the last chapter, every Java class has one or more methods. The syntax for calling a method is:
+\verb|String| is the only Java class that can declare (also called ``instantiate") a variable without the \verb|new| keyword. All other Java classes must be instantiated with this keyword.
+
+\par Now we need to see what we can do with these \verb|String| variables. As we covered in the last chapter, every Java class has one or more methods. The syntax for calling a method is:
 
 \begin{center}
 $variable.methodname(optional parameters)$
 \end{center}
 
-\noindent Note: \textbf{we cannot call methods on primitive data types} (see later chapters on classes and methods). Examples of various methods in Java for the \verb|String| class are:
+Note: \textbf{we cannot call methods on primitive data types} (see later chapters on classes and methods). Examples of various methods in Java for the \verb|String| class are:
 \begin{lstlisting}
 String str1 = "I love Java";
 /*String.toUpperCase() and toLowerCase*/
@@ -267,8 +264,8 @@ int c4 = "B".compareTo("A"); // positive
 
 \subsection{Scanner}
 Now that we know how to create and modify modify \verb|String| variables, it is important to know how to get input from the user so that we can make our programs usable. For that, we use the \verb|Scanner| class in the \verb|java.util| package.
-\\ \\
-However, since this class is not in the package \verb|java.lang|, we must $import$ it from the Java library, by putting an import statement at the beginning of our file:
+
+\par However, since this class is not in the package \verb|java.lang|, we must $import$ it from the Java library, by putting an import statement at the beginning of our file:
 \begin{lstlisting}
 import java.util.Scanner; // import the Scanner class from the java.util package
 // Equivalent: import java.util.*; // import everything from this package
@@ -424,9 +421,7 @@ double d4 = Math.pow(d2, d3); // = 3.5^4.3
 
 \subsection{Written Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
-
+\begin{enumerate}
 \item Give the output of the following program:
 \begin{lstlisting}
 public class Example {
@@ -453,7 +448,6 @@ public class Example {
 }
 \end{lstlisting}
 
-
 \item What will be the output of the following program?
 \begin{lstlisting}
 public class Example {
@@ -466,7 +460,6 @@ public class Example {
      }
 }
 \end{lstlisting}
-
 
 \item Which of the following correctly invokes the method \verb|length()| of the \verb|String| variable \verb|str| and stores the result in \verb|val| of type \verb|int|?
 \begin{lstlisting}
@@ -544,8 +537,7 @@ length -= 6;
 
 \subsection{Programming Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+\begin{enumerate}
 
 \item Write a Java program that asks the user for the radius of a circle and finds the area of the circle.
 

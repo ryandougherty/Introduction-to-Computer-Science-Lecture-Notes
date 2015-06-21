@@ -5,8 +5,8 @@ Now that we have created instance methods in the last chapter, we want to create
 
 \subsection{Static}
 The keyword \verb|static| in Java is meant to mean ``only one of these exists". If I have a \verb|static| variable in a class (in the same place an instance variable will be), there will only be one copy of that variable, regardless of how many instances there are of that class.
-\\ \\
-For example, let's say we have a class called \verb|B| that has a \verb|static| field called \verb|numInstances| of type \verb|int| which is incremented every time the constructor is called. We would design the code like this:
+
+\par For example, let's say we have a class called \verb|B| that has a \verb|static| field called \verb|numInstances| of type \verb|int| which is incremented every time the constructor is called. We would design the code like this:
 \begin{lstlisting}
 public class B {
      private static int numInstances = 0; // start with a value
@@ -45,8 +45,8 @@ B b2 = new B();
 System.out.println(b2.getNumInstances()); // prints 1
 \end{lstlisting}
 which is not the behavior that we want.
-\\ \\
-Now we can get a larger understanding of various conventions we have been using:
+
+\par Now we can get a larger understanding of various conventions we have been using:
 \begin{itemize}
 \item The main method's use of \verb|static| in its signature shows that only 1 copy of that method can exist at a time in a Java program. Therefore, there is no ambiguity as to where execution starts.
 \item For other code, such as \verb|Math.PI|, we can have an understanding as to possibly how it and some of its static methods are implemented:
@@ -66,8 +66,7 @@ public class Math {
 
 \subsection{Written Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+\begin{enumerate}
 
 \item What is a static variable? What is a static method?
 

@@ -24,8 +24,8 @@ public boolean linearSearch(int[] array, int search) {
 }
 \end{lstlisting}
 However, this loop can be inefficient, because we have no guarantee what the ordering or contents of \verb|array| are. We have to search (on average) $\frac{n}{2}$ elements. Therefore, we cannot make a ``guess" as to improvements can be done.
-\\ \\
-However, if we can have a guarantee on the ordering of elements in the array, we can get better performance, as shown by binary search.
+
+\par However, if we can have a guarantee on the ordering of elements in the array, we can get better performance, as shown by binary search.
 
 \subsection{Binary Search}
 We can improve our algorithm by using binary search, on one condition: we \textbf{must} guarantee that the input array \textbf{is already sorted}. We will cover how to sort an unsorted array in the next chapter. Pseudocode of the algorithm is the following:
@@ -43,8 +43,8 @@ function BinarySearch(array a, int key):
      return -1; // not found
 \end{verbatim}
 The algorithm works like this: since the array is sorted, we check the middle value. If the value to search is larger than that middle value, we ``cut off" the lower half of the array, since we can guarantee it is not in that part (and likewise for less than). Then we check the middle half of the top half of the array, and keep adjusting what is the ``low" and ``high" ranges of what part of the array we are searching. We stop when we keep adjusting ``low" to the point that it is higher than ``high" (it does not make sense to search in a range that is backwards). At that point, we have not found our element, and we return.
-\\ \\
-For example, we can create a similar procedure in Java with a \verb|int| array (the concept works with Strings also, just comparing their lexicographic ordering instead):
+
+\par For example, we can create a similar procedure in Java with a \verb|int| array (the concept works with Strings also, just comparing their lexicographic ordering instead):
 \begin{lstlisting}
 public int binarySearch(int[] array, int k) {
      int min = 0, max = array.length-1;
@@ -85,8 +85,7 @@ a[mid] = 4
 \end{verbatim}
 \subsection{Written Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+\begin{enumerate}
 
 \item Use the sorted list below and use binary search to look for Mike in the list. Show all the names that will be compared before Mike is found. Then, repeat the same process for Cathy (note: Cathy is not in the list).
 \begin{table}[h]

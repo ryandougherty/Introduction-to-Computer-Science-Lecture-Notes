@@ -17,8 +17,8 @@ function BubbleSort(array a):
                     swapped = true;
 \end{verbatim}
 The reasoning is this: start with the first 2 elements. If the first is larger than the second, swap them. Then move onto the 2nd and 3rd items, and swap if necessary, etc. until the last 2 elements. If we did a swap operation at any point, \verb|swapped| is \verb|true|, and we keep repeating the outer \verb|while| loop. We set \verb|swapped| to \verb|false| on every iteration of the \verb|while| loop. The only way \verb|swapped| can be \verb|false| is if we do not set it to \verb|true|, which means that the data is sorted (each ith element is larger than the i-1th element). Therefore, we are done.
-\\ \\
-For example, let's assume we have the array $\{5, 3, 1, 4, -2\}$. Let's see each step of running the bubble sort algorithm:
+
+\par For example, let's assume we have the array $\{5, 3, 1, 4, -2\}$. Let's see each step of running the bubble sort algorithm:
 \begin{verbatim}
 5 3 1 4 -2 // original
 // enter for loop - a[0] > a[1], so swap:
@@ -133,8 +133,7 @@ What the algorithm does is: on the first iteration, the first element is sorted 
 
 \subsection{Written Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+\begin{enumerate}
 
 \item Write the contents of the following array after each step of the Selection Sort and Insertion Sort algorithms (assume the sorting is done in alphabetical order).
 \begin{table}
@@ -151,8 +150,7 @@ Mike & Betsy & Aaron & Steven & Doug & Pat & Elise
 
 \subsection{Programming Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+\begin{enumerate}
 
 \item Implement Bubble Sort.
 \item Implement Selection Sort.

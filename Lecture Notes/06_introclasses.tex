@@ -5,8 +5,8 @@ Now that we understand how loops work, we want to be able to create our own clas
 
 \subsection{Class Structure}
 A class follows the same format as we have been for our main programs. However, there does not have to be a main method in a class. The only requirement for main is that the class we run a program from contains a main method.
-\\ \\
-A class contains what are called ``instance variables", a constructor, and 1 or more methods. But before we can talk about these, we need to cover visibility modifiers.
+
+\par A class contains what are called ``instance variables", a constructor, and 1 or more methods. But before we can talk about these, we need to cover visibility modifiers.
 
 \subsection{Visibility Modifiers}
 We have been using \verb|public| when we create our programs so far. Now we will cover what this means, and what other visibility modifiers are. They are, for any variable/method/class:
@@ -18,8 +18,8 @@ We have been using \verb|public| when we create our programs so far. Now we will
 
 \subsection{Instance Variables}
 Instance variables are variables that exist inside a class when they are created. We usually write instance variables to have a visibility of \verb|private|, to enforce what is called ``encapsulation", which means that we hide data (the instance variables) that we do not want ``outsiders" to change. 
-\\ \\
-For example, let's create a BankAccount class:
+
+\par For example, let's create a BankAccount class:
 \begin{lstlisting}
 public class BankAccount {
 	
@@ -189,8 +189,7 @@ System.out.print(b.toString());
 
 \subsection{Written Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+\begin{enumerate}
 
 \item Which of the following enforces Encapsulation?
 \begin{enumerate}
@@ -243,8 +242,7 @@ public class Store {
 
 \subsection{Programming Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]\bfseries
+\begin{enumerate}
 
 \item For the \verb|Store| class in the Written Exercises above, do the following:
 \begin{enumerate}

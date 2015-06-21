@@ -17,8 +17,8 @@ Loops are a way of executing some code an arbitrary number of times. What determ
 $while(condition) \{...\}$
 \end{center}
 The semantics are: the loop will continue as long as the condition evaluates to \verb|true|. The main reason \verb|while| loops are used is that we may not know the number of times looping occurs. If we do, we usually use a \verb|for| loop (see below). However, both \verb|while| and \verb|for| loops can be converted back and forth.
-\\ \\
-For example, let's say we are given a task of displaying a positive integer that the user enters, and continue doing so until the user enters 0. Setting up is easy:
+
+\par For example, let's say we are given a task of displaying a positive integer that the user enters, and continue doing so until the user enters 0. Setting up is easy:
 \begin{lstlisting}
 Scanner s = new Scanner(System.in);
 while(/* something */) {
@@ -59,8 +59,8 @@ Now our solution code for the example is correct.
 
 \subsection{Do-While loops}
 \verb|do-while| loops are the same as \verb|while| loops, but guarantee that the loop body will be executed at least once. Remember our earlier \verb|while| loop example: if we initially entered 0, then the loop's condition evaluates to \verb|false|, and does not execute the body. Therefore, it loops 0 times. 
-\\ \\
-The structure of a do-while loop is:
+
+\par The structure of a do-while loop is:
 \begin{center}
 $do \{ ... \} while(condition);$
 \end{center}
@@ -114,8 +114,7 @@ System.out.println(sum);
 
 \subsection{Written Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+\begin{enumerate}
 
 \item What are the 3 kinds of loops in Java?
 
@@ -188,8 +187,7 @@ System.out.print(n);
 
 \subsection{Programming Exercises}
 
-\setcounter{counter}{1}
-\begin{enumerate}[label={\arabic{counter}\addtocounter{counter}{1}}.]
+\begin{enumerate}
 
 \item Write a loop that reads in \verb|int| values until the user enters 0 and prints out how many values entered are greater than 10.
 

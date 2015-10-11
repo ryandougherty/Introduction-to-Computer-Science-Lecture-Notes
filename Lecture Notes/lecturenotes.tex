@@ -1,7 +1,7 @@
 % This is LLNCS.DOC the documentation file of
 % the LaTeX2e class from Springer-Verlag
 % for Lecture Notes in Computer Science, version 2.4
-\documentclass[12pt]{llncs}
+\documentclass[11pt]{llncs}
 
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{enumitem}
@@ -13,10 +13,8 @@
 	basicstyle=\ttfamily,
 	breaklines=true,
 	commentstyle=\color{ForestGreen}\ttfamily,
-	frame=single,
 	keywordstyle=\color{blue}\ttfamily,
 	language=Java,
-	numbers=left,
 	stringstyle=\color{red}\ttfamily,
 	showstringspaces=false
 	morecomment=[l][\color{magenta}]{\#},
@@ -44,50 +42,30 @@
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
-\newenvironment{dedication}
-  {\clearpage           % we want a new page
-   \thispagestyle{empty}% no header and footer
-   \vspace*{\stretch{1}}% some space at the top 
-   \itshape             % the text is in italics
-   \raggedleft          % flush to the right margin
-  }
-  {\par % end the paragraph
-   \vspace{\stretch{3}} % space at bottom is three times that at the top
-   \clearpage           % finish off the page
-  }
-  
 \begin{document}
 
 \begin{center}
 
-\textsc{\LARGE Arizona State University}\\[1.5cm]
+%\textsc{\LARGE Arizona State University}\\[1.5cm]
 
-\textsc{\Large School of Computing, Informatics, and Decision Systems Engineering}\\[0.5cm]
+%\textsc{\Large School of Computing, Informatics, and Decision Systems Engineering}\\[0.5cm]
 
 % Title
 \HRule \\[0.4cm]
-{ \huge \bfseries CSE 110 Lecture Notes \\[0.4cm] }
+{ \huge \bfseries Introduction to Java \\ Lecture Notes \\[0.4cm] }
 
 \HRule \\[1.5cm]
 
 % Author and supervisor
-\begin{minipage}{0.4\textwidth}
-\begin{center} \large
-\textsc{Ryan Dougherty
+\textsc{Ryan Dougherty \\
 \href{mailto:redoughe@asu.edu}{redoughe@asu.edu}
 }
-\end{center}
-\end{minipage}
-\begin{minipage}{0.4\textwidth}
-\end{minipage}
 
-\vfill
 
 \end{center}
 %
-\newpage
 \tableofcontents
-\newpage
+
 %
 \input{00_versions}\newpage
 \input{01_introduction}\newpage

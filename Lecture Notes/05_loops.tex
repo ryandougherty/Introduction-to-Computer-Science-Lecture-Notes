@@ -112,6 +112,78 @@ for(int i=1; i<=n; i++) {
 System.out.println(sum);
 \end{lstlisting}
 
+\subsection{Loop Example}
+In many programming interviews, there are questions designed to test one's knowledge of loops. One of them is called ``FizzBuzz." The idea is this: print ``Fizz" if the number is divisible by 3, ``Buzz" if the number is divisible by 5, ``FizzBuzz" if the number is divisible by 3 and 5 (i.e., 15), and nothing otherwise. Now, we want the user to input an integer \texttt{n}, and from 1 to \texttt{n}, we want to print the appropriate value. We start with a setup of our program:
+\begin{lstlisting}
+public class FizzBuzz {
+     public static void main(String[] args) {
+          // something goes here...
+     }
+}
+\end{lstlisting}
+Now we need to add appropriate code to get an integer \texttt{n} from the user:
+\begin{lstlisting}
+import java.util.Scanner;
+public class FizzBuzz {
+     public static void main(String[] args) {
+          Scanner s = new Scanner(System.in);
+          int n = s.nextInt(); // get the integer
+     }
+}
+\end{lstlisting}
+Since we know the number of loop iterations (i.e., \texttt{n}), we can just use a for loop to iterate from 1 to \texttt{n}:
+\begin{lstlisting}
+import java.util.Scanner;
+public class FizzBuzz {
+     public static void main(String[] args) {
+          Scanner s = new Scanner(System.in);
+          int n = s.nextInt(); // get the integer
+          for (int i = 1; i <= n; i++) {
+               // what else?
+          }
+     }
+}
+\end{lstlisting}
+Now we just need to insert an \texttt{if} and \texttt{else} statements to check if \texttt{n} is divisible by 3, 5, or 15 (and then print the appropriate value). However, we cannot just do this:
+\begin{lstlisting}
+import java.util.Scanner;
+public class FizzBuzz {
+     public static void main(String[] args) {
+          Scanner s = new Scanner(System.in);
+          int n = s.nextInt(); // get the integer
+          for (int i = 1; i <= n; i++) {
+               if (i % 3 == 0) {
+                    System.out.println("Fizz");
+               } else if (i % 5 == 0) {
+                    System.out.println("Buzz");
+               } else if (i % 15 == 0) {
+                    System.out.println("FizzBuzz");
+               }
+          }
+     }
+}
+\end{lstlisting}
+The last clause will never be reached. If \texttt{i} is divisible by 15, then it is divisible by 3 or 5 as well. Therefore, it would have went inside one of the other conditionals. Therefore, we just need to move it to be the first conditional:
+\begin{lstlisting}
+import java.util.Scanner;
+public class FizzBuzz {
+     public static void main(String[] args) {
+          Scanner s = new Scanner(System.in);
+          int n = s.nextInt(); // get the integer
+          for (int i = 1; i <= n; i++) {
+               if (i % 15 == 0) {
+                    System.out.println("FizzBuzz");
+               } else if (i % 3 == 0) {
+                    System.out.println("Fizz");
+               } else if (i % 5 == 0) {
+                    System.out.println("Buzz");
+               }
+          }
+     }
+}
+\end{lstlisting}
+There are other ways to do this - for example, we can just have the last 2 conditionals, but use \texttt{print} instead of \texttt{println}, and then add a newline afterwards.
+
 \subsection{Written Exercises}
 
 \begin{enumerate}
